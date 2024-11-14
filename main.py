@@ -15,9 +15,8 @@ from tool_func import messages
 
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
-LANGCHAIN_API_KEY="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"
-LANGCHAIN_PROJECT="molina-sop"
-
+LANGCHAIN_API_KEY="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"
+LANGCHAIN_PROJECT = "molina-sop"
 
 app = FastAPI()
 

@@ -26,14 +26,21 @@ def return_system(claim):
 
 
 def initial_checks(claim):
+    """
+    The claim should be initially processed using the `initial_checks tool`, and
+    the result from this tool should then be passed to the `create_agent tool`.
+
+    Args:
+        claim (str): A string representation of the claim.
+
+    Returns:
+        str: The processed claim to be passed on to the create_agent tool.
+    """
     print("Initial Check Agent")
 
-    try:
-        res = llm.invoke(return_system(claim)).content
-    except Exception as e:
-        print(f"Error in initial_checks functionn")
-        return str(e) 
+    res = llm.invoke(return_system(claim)).content
 
+    # return res + f"\n{claim}"
     return res
 
 
@@ -49,42 +56,22 @@ def final(claim):
     """
     print("#####Timely Filing Tool#####")
 
-    try:
-        # Attempt to open and read the JSON file
-        with open("json-files/Timely Filing Requirements by State Job Aid.json") as f:
-            data = yaml.load(f, Loader=yaml.FullLoader)
-    except FileNotFoundError:
-        return "Error: The required JSON file could not be found."
-    except IOError:
-        return "Error: An issue occurred while reading the JSON file."
-    except yaml.YAMLError as e:
-        return f"Error: There was an issue parsing the YAML file. Details: {str(e)}"
+    with open("json-files/Timely Filing Requirements by State Job Aid.json") as f:
+        data = yaml.load(f, Loader=yaml.FullLoader)
+    json_spec = JsonSpec(dict_=data, max_value_length=4000)
+    json_toolkit = JsonToolkit(spec=json_spec)
 
-    try:
-        # Initialize the JsonSpec and JsonToolkit
-        json_spec = JsonSpec(dict_=data, max_value_length=4000)
-        json_toolkit = JsonToolkit(spec=json_spec)
-    except Exception as e:
-        return f"Error: There was an issue initializing the JsonSpec or JsonToolkit. Details: {str(e)}"
+    json_agent_executor = create_json_agent(
+        handle_parsing_errors=True,
+        prefix=prefix,
+        suffix=suffix,
+        llm=llm,
+        toolkit=json_toolkit,
+        verbose=True,
+    )
 
-    try:
-        # Create the agent executor
-        json_agent_executor = create_json_agent(
-            handle_parsing_errors=True,
-            prefix=prefix,
-            suffix=suffix,
-            llm=llm,
-            toolkit=json_toolkit,
-            verbose=True,
-        )
-    except Exception as e:
-        return f"Error: There was an issue creating the agent executor. Details: {str(e)}"
-
-    try:
-        response = json_agent_executor.invoke(
-            "Process the state mentioned for timely filing of claims: " + claim
-        )
-    except Exception as e:
-        return f"Error: An error occurred while invoking the agent. Details: {str(e)}"
+    response = json_agent_executor.invoke(
+        "Process the state mentioned for timely filing of claims: " + claim
+    )
 
     return response
