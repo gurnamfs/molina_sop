@@ -58,6 +58,7 @@
                 ],
                 "Dallas County Hospitals": "Outpatient services only"
             },
+            "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
             "For Marketplace": "Effective on and after 11/30/2022, UT Southwestern is no longer exempt from prior authorization requirements.",
             "For Medicaid": [
                 "UT Southwestern (Professional claims only)",
@@ -69,13 +70,15 @@
                 "Guidelines": {
                     "If auth not required And auth is in system": "Then, do not attach auth to the claim.",
                     "If auth is required And no auth is in system": "Then refer to business rule for particular scenario in the “Authorization Mismatches” section and process accordingly.",
-                    "If auth is required And auth mismatch is in system": "Then refer to business rule for particular scenario in the “Authorization Mismatches” section and process accordingly."
+                    "If auth is required And auth mismatch is in system": "Then refer to business rule for particular scenario in the “Authorization Mismatches” section and process accordingly.",
+                    "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json"
                 },
                 "Refer to the": "Refer to the Authorization Business Process - All States and LOBs - SOP.json and  Check for any relevant instructions regarding claim payments provided by UM in the non-clinical note section of the authorization in the claims core processing system."
             },
             "Note (AZ NICU)": "Authorization is not required for a mother’s claim unless the inpatient stay is for more than the following. Check AHCCCS Maternity Care Services: Forty-eight (48) hours for natural delivery, Ninety-six (96) hours for cesarean section"
         },
         "Authorization Mismatches": {
+            "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
             "Whenever there is an authorization that is not an exact match to billed services, follow the instructions below": {
                 "Billed level of care is higher than authorized level of care. Example Facility bills with rev code 174 and auth is for rev code 172. Marketplace Note: Code 174: NICU Level IV Code 172: NICU Level II": "Pay as authorized except where DRG/percentage payments are applicable. In these cases, allow system to pay per contract amount unless otherwise instructed by state-specific Inpatient DRG Outlier instructions or state-specific DRG pricing calculators. AZ: Pay with auth. For no auth, deny using remit 197. WA NICU: Refer to the Authorization Business Matrix - All States and LOBs – Reference.",
                 "Billed level of care is higher than authorized level of care, cont.": "Marketplace: Validate the contract to see if NICU Levels II-IV pay the same: If the level of care billed pays the same as the level of care authorized, then pay the claim as billed. If the level of care billed pays more than the one authorized, then apply LOC reductions. Exception: The states of Florida and Utah are excluded from the inpatient LOC reduction. For all other states pricing at DRG, LOC reduction does not apply.",
@@ -123,6 +126,7 @@
             }
         },
         "Services Not Authorized": {
+            "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
             "Provider bills with Pediatric ICU (PICU) and corresponding auth on file is for Neonatal ICU (NICU).": "Deny claim for a corrected claim using IN002.",
             "All billed DOS are either prior to or extend beyond authorized DOS and do not overlap.": "Deny for no auth using 197.",
             "Primary services do not require auth or have an auth, but services necessary to provide another related service do require auth (or vice versa).": "Pay all supporting services, except for AZ, MA, WA, then pend, and route to UM.",
@@ -158,6 +162,7 @@
             "Route claim to UM for determination.": "When the claim is returned, process the claim based on UM determination:\n• If UM approves and, or adds an authorization, continue with normal processing guidelines.\n• If UM denies or confirms that no authorization will be issued, deny the claim with remit code 197."
         },
         "Temporary Provider Authorization": {
+            "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
             "If an authorization exists that covers any of the billed date(s) of service and is loaded under Temporary Provider, follow the steps listed below": {
                 "Step 1": "Review non-clinical notes for provider demographic information.",
                 "Step 2": {
@@ -168,7 +173,7 @@
                 }
             }
         },
-        "CMS 1500 Forms: POS 21, 22, 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
+        "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
         "Other Miscellaneous": {
             "Follow the instructions": {
                 "Inpatient Non-Emergent facility claim requiring an authorization and no authorization is on file.": "Deny claim for no authorization with remit code 197.",
@@ -280,7 +285,7 @@
                 ]
             }
         },
-        "New York Medicaid Private Duty Nursing (PDN)": "Refer to the Private Duty Nursing - New York Medicaid - Processing Guideline.json - Processing Guideline for information regarding authorization for members receiving services from multiple independent nurses.",
+        "For the New York State": "Refer to the Private Duty Nursing - New York Medicaid - Processing Guideline.json - Processing Guideline for information regarding authorization for members receiving services from multiple independent nurses.",
         "Ohio: Edit 604": {
             "Follow these steps when edit 604 fires": [
                 "Review all authorizations related to the claim.",
