@@ -1,0 +1,87 @@
+{
+    "subject": "Authorization Non-Clinical Notes",
+    "product": {
+        "marketplace": false,
+        "medicaid": true,
+        "medicare": false,
+        "mmp_mmcp": false
+    },
+    "state": {
+        "all": false,
+        "az": false,
+        "ca": true,
+        "fl": false,
+        "id": false,
+        "il": false,
+        "ia": false,
+        "ky": false,
+        "ma": false,
+        "mi": false,
+        "ms": false,
+        "ne": false,
+        "nv": false,
+        "nm": false,
+        "ny": false,
+        "oh": false,
+        "pr": false,
+        "sc": false,
+        "tx": false,
+        "ut": false,
+        "va": false,
+        "wa": false,
+        "wi": false
+    },
+    "line_of_business": "All",
+    "document_owner": "Enmanuel Medrano",
+    "created_by": "Carri A. Nickles",
+    "created_date": "12/08/09",
+    "revised_by": "Don Larson",
+    "approved_date": "09/30/20",
+    "approved_by": "QDC 2020 (Not Reviewed)",
+    "approved_via": "QDC SharePoint Site",
+    "approver_title": "QDC Review Committee",
+    "iqr_reviewer": "Lynne Edwards",
+    "iqr_date": "06/28/24",
+    "overview": {
+        "quick_summary": "Provides the information necessary to make processing determinations using authorization status and non-clinical notes from the claim."
+    },
+    "contents": [
+        "Overview",
+        "Quick Summary",
+        "Contents",
+        "Reference",
+        "Processing Instructions",
+        "Authorization Status: APPROVE",
+        "Authorization Status: DENY",
+        "Authorization Status: Pend",
+        "Revision Summary",
+        "Reference"
+    ],
+    "Claim Number 1108": "Pay $84.63",
+    
+    "reference": [
+        "Eligibility Requirements - California Medicaid - Job Aid"
+    ],
+    "userQuery": {
+        "RevisionSummary": [
+            {
+                "RequestID": "IQR",
+                "Posted/ArchivedDate": "06/18/24",
+                "ARY/N": "N",
+                "Comments": "The document went through an internal quality review and the following was updated:\n\u2022 Document template\n\u2022 Reformatting to meet current standards\n\nNote: The IQR checks formatting and adherence to internal standards and is not a substitute for content review. This document is overdue for Claims review and may be subject to compliance risk for state/federal or business requirements."
+            },
+            {
+                "RequestID": "QDC",
+                "Posted/ArchivedDate": "9/20/22",
+                "ARY/N": "N",
+                "Comments": "The document went through the annual QDC review cycle but received insufficient feedback. This is considered a \"missed review\" and may be subject to compliance risk."
+            },
+            {
+                "RequestID": "QDC",
+                "Posted/ArchivedDate": "10/15/20",
+                "ARY/N": "N",
+                "Comments": "Updated/Removed document titles in \"References\" section. Updated document title and removed outdated table verbiage in \"Authorization Status: DENY\" and \"Authorization Status: PEND\"."
+            }
+        ]
+    }
+}

@@ -1,0 +1,174 @@
+{
+    "subject": "Private Duty Nursing",
+    "product": {
+        "marketplace": false,
+        "medicaid": true,
+        "medicare": false,
+        "mmp_mmcp": false
+    },
+    "state": {
+        "all": false,
+        "az": false,
+        "ca": true,
+        "fl": false,
+        "id": false,
+        "il": false,
+        "ky": false,
+        "ma": false,
+        "mi": false,
+        "ms": false,
+        "nv": false,
+        "nm": false,
+        "ny": true,
+        "oh": true,
+        "pr": false,
+        "sc": false,
+        "tx": false,
+        "ut": false,
+        "va": false,
+        "wa": false,
+        "wi": false
+    },
+    "lines_of_business": "MLTS Partial Capitation Plan",
+    "document_owner": "Tanya Contreras",
+    "created_by": "Deirdre Wiley",
+    "created_date": "04/01/21",
+    "revised_by": "Deirdre Wiley",
+    "approved_date": "07/21/22",
+    "approved_by": "Tanya Contreras",
+    "approved_via": "Document Intake Site",
+    "approver_title": "MHI - AVP, Core Operations",
+    "overview": {
+        "title": "Private Duty Nursing",
+        "purpose": "To document the guidelines for accurate and consistent processing of Private Duty Nursing services claims."
+    },
+    "effective_date": "The processing guidelines outlined in this document are effective for dates of service (DOS) on and after April 1, 2021.",
+    "expected_outcome": "Claims personnel will use the information and instructions provided in this document to adjudicate Private Duty Nursing services claims based on regulatory and health plan requirements and established Molina Claims Department guidelines.",
+    "Contents": {
+        "Overview": 1,
+        "Purpose": 1,
+        "Effective Date": 1,
+        "Expected Outcome": 1,
+        "Contents": 2,
+        "Authorizations": 2,
+        "Determining Service Type": 3,
+        "Claim Form": 3,
+        "Identifying Services for CMS-1500": 3,
+        "Identifying Services for UB-04": 3,
+        "Benefits": 4,
+        "Covered Benefits": 4,
+        "Remit Codes": 5,
+        "Revision Summary": 5
+    },
+    "Authorizations": {
+        "Reference": "Authorization Business Process \u2013 All States and LOBs - SOP and the Authorization Business Matrix \u2013 All States and LOBs - Reference",
+        "Note": "Frequently updated reference documents may not provide a link.",
+        "UM Umbrella Authorizations": {
+            "Description": "Utilization Management (UM) will create one 'umbrella' auth per member to house the total number of approved Private Duty Nursing (PDN) hours for members receiving services from multiple independent nurses.",
+            "Details": "The umbrella auth will be created under Temporary Provider, and will include the following in the non-clinical notes:",
+            "Non-Clinical Notes": {
+                "Name of each nurse": null,
+                "Service Contract Act (SCA) rates for each nurse": null
+            }
+        }
+    },
+    "Determining Service Type": {
+        "Claim Form": {
+            "Description": "Claims for Private Duty Nursing services are submitted on the Centers for Medicare and Medicaid Services form (CMS-1500) and Uniform Billing form (UB-04)."
+        },
+        "Identifying Services for CMS-1500": {
+            "Description": "Review the following boxes to determine if services are processed under the Private Duty Nursing services processing guidelines:",
+            "Boxes": [
+                {
+                    "Box Number": "21",
+                    "Description": "Diagnosis Codes"
+                },
+                {
+                    "Box Number": "24A",
+                    "Description": "(From and To Dates)"
+                },
+                {
+                    "Box Number": "24B",
+                    "Description": "Place of Services (POS)"
+                },
+                {
+                    "Box Number": "24D",
+                    "Description": "CPT/HCPCS Codes"
+                },
+                {
+                    "Box Number": "24D",
+                    "Description": "Modifiers"
+                },
+                {
+                    "Box Number": "33",
+                    "Description": "Pay-to Provider"
+                }
+            ]
+        },
+        "Identifying Services for UB-04": {
+            "Description": "Review the following boxes to determine if services are processed under the Private Duty Nursing services processing guidelines:",
+            "Boxes": [
+                {
+                    "Box Number": "1",
+                    "Description": "Facility Name"
+                },
+                {
+                    "Box Number": "4",
+                    "Description": "Bill Type"
+                },
+                {
+                    "Box Number": "6",
+                    "Description": "(From and To Dates)"
+                },
+                {
+                    "Box Number": "13",
+                    "Description": "Admit Hour"
+                },
+                {
+                    "Box Number": "16",
+                    "Description": "Discharge Hour"
+                },
+                {
+                    "Box Number": "18-28",
+                    "Description": "Condition Codes"
+                },
+                {
+                    "Box Number": "42",
+                    "Description": "Revenue Codes"
+                },
+                {
+                    "Box Number": "66",
+                    "Description": "Diagnosis Codes"
+                },
+                {
+                    "Box Number": "74",
+                    "Description": "Procedure Codes"
+                }
+            ]
+        }
+    },
+    "CoveredBenefits": {
+        "Description": "Private Duty Nursing services are a covered benefit for the Molina Healthcare of New York (MHNY) health plan members aged 21 and over who are enrolled in the MLTC plan.",
+        "Codes": [
+            {
+                "CPT/HCPCS Code": "S9123",
+                "Description": "Nursing care, in the home, by registered nurse, per hour"
+            },
+            {
+                "CPT/HCPCS Code": "S9124",
+                "Description": "Nursing care, in the home, by licensed practical nurse, per hour"
+            }
+        ]
+    },
+    "RemitCodes": {
+        "Instruction": "If a remit code is needed, select the remit code that best communicates the reason(s) for denial from those listed in the core claims processing system."
+    },
+    "RevisionSummary": [
+        {
+            "RequestID": "5101",
+            "PostedArchivedDate": "07/29/22",
+            "QDC_YN": "Y",
+            "Comments": "Added UM Umbrella Auth info in Authorizations section, made minor formatting updates."
+        }
+    ]
+}

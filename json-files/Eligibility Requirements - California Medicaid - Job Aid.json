@@ -1,0 +1,183 @@
+{
+    "Subject": "Eligibility Requirements",
+    "Product": {
+        "Marketplace": true,
+        "Medicaid": true,
+        "Medicare": false,
+        "MMP/MMCP": false
+    },
+    "State": {
+        "ALL": false,
+        "AZ": false,
+        "CA": true,
+        "FL": false,
+        "ID": false,
+        "KY": false,
+        "IL": false,
+        "MI": false,
+        "MS": false,
+        "NM": false,
+        "NY": false,
+        "OH": false,
+        "PR": false,
+        "SC": false,
+        "TX": false,
+        "UT": false,
+        "WA": false,
+        "WI": false
+    },
+    "Document Owner": "Frank Vernaza",
+    "Line(s) of Business": "All",
+    "Created Date": "10/29/09",
+    "Created By": "Carri A. Nickles",
+    "Revised Date(s)": [
+        "12/31/16",
+        "02/06/19",
+        "03/15/21"
+    ],
+    "Revised By": "Marlen Villasenor",
+    "Approved Date": "03/15/21",
+    "Approved By": "Frank Vernaza",
+    "Approved Via": "Workgroup Approval",
+    "Approver Title": "MHI \u2013 Dir, Claims",
+    "QDC": {
+        "Reviewed": true,
+        "Missed Review": false,
+        "N/A": false
+    },
+    "Overview": {
+        "Purpose": "The purpose of this document is to provide guidelines for eligibility for the lines of business in California.",
+        "Expected Outcome": "Claims personnel will utilize these guidelines to correctly identify members and services covered under Molina."
+    },
+    "Contents": {
+        "Overview": {
+            "Purpose": 1,
+            "Expected Outcome": 1,
+            "Contents": 2,
+            "References": 2
+        },
+        "Processing Instructions": {
+            "California Children\u2019s Services": 3,
+            "Health Net": 3,
+            "Newborn Selection": 4,
+            "Medi-Cal": 5
+        },
+        "Revision Summary": 6
+    },
+    "References": [
+        "DOFR Tool Application \u2013 California \u2013 Processing Guideline",
+        "DOFR Tool Attributes \u2013 California \u2013 Job Aid"
+    ],
+    "ProcessingInstructions": {
+        "CaliforniaChildrensServices": {
+            "description": "California Children\u2019s Services (CCS) is a state program that covers medical care for long-term illnesses and certain acute injuries and illnesses for children up until their 21st birthday. Prior to processing a claim for payment, examiners must review non-clinical notes in the authorization and/or claim memos to determine if there is an approved CCS case for the diagnosis on the claim. CCS covers office visits, hospital stays, surgeries, physical and occupational therapy, tests, x-rays, medical supplies and equipment if the diagnosis is related to the condition for which the child has an open CCS case.",
+            "instructions": [
+                {
+                    "if": "an authorization in a Medreview status and the notes indicate that the auth is pending CCS determination",
+                    "then": "deny claim using remit code CCS001",
+                    "andRemitCodeDescription": "Please resubmit to CCS for determination."
+                },
+                {
+                    "if": "CCS case is denied",
+                    "then": "deny claim using remit code CCS002",
+                    "andRemitCodeDescription": "CCS Accepted. Please resubmit to CCS for payment."
+                },
+                {
+                    "if": "an authorization indicates CCS denied the case for failure to coordinate CCS paneled provider",
+                    "then": "deny claim using remit code CCS003",
+                    "andRemitCodeDescription": "Service denied for failure to coordinate CCS paneled provider for duration of inpatient stay."
+                }
+            ],
+            "note": "Any service that is covered by CCS and is not Molina\u2019s financial responsibility must follow the existing process e.g. misdirected."
+        },
+        "HealthNet": {
+            "description": "Some claims and services have been delegated to Health Net for payment. If the Delegate To box is populated with \u201cPRIPA00064\u201d and edit 203 fires, deny claim using remit, \u201cHN002\u201d.",
+            "note": null
+        }
+    },
+    "title": "Medi-Cal",
+    "section": "Newborn Selection",
+    "instructions": [
+        {
+            "context": "Claims for newborns born to mothers covered under Medi-Cal in Los Angeles County may be processed under the mother\u2019s eligibility file as follows:",
+            "conditions": [
+                {
+                    "if": "the newborn eligibility is loaded under the newborn",
+                    "then": "process the claim accordingly."
+                },
+                {
+                    "if": "the newborn eligibility is not loaded under the newborn",
+                    "then": "process the claim under the mother\u2019s eligibility file and enter a memo stating the following:",
+                    "memo": [
+                        "BUMC",
+                        "Baby\u2019s Name",
+                        "Baby\u2019s Date of Birth"
+                    ]
+                }
+            ]
+        },
+        {
+            "context": "Claims for newborns born to mothers covered under Medi-Cal (except Los Angeles County) must be processed under their own eligibility file as follows:",
+            "conditions": [
+                {
+                    "if": "the newborn eligibility is loaded under the newborn",
+                    "then": "process the claim accordingly."
+                },
+                {
+                    "if": "the newborn eligibility is not loaded under the newborn",
+                    "then": "route the claim to ELG to have eligibility loaded."
+                }
+            ]
+        }
+    ],
+    "examples": {
+        "incorrect_member_record": {
+            "fields": {
+                "Member ID": "Q-XXXX",
+                "Name": "John Doe",
+                "SSN": "Q-XXX-XX-XXXX",
+                "Date of Birth": "01/01/2020",
+                "Gender": "M",
+                "Relation": "Self",
+                "Subscriber ID": "123456789",
+                "Linked Member": null
+            }
+        },
+        "correct_member_record": {
+            "fields": {
+                "Member ID": "XXXX",
+                "Name": "Jane Doe",
+                "SSN": "XXX-XX-XXXX",
+                "Date of Birth": "01/01/2020",
+                "Gender": "F",
+                "Relation": "Self",
+                "Subscriber ID": "123456789",
+                "Linked Member": "Mother"
+            }
+        }
+    },
+    "page": "Page 4 of 6",
+    "navigation": "Continued on next page",
+    "description": "Medi-Cal is a program that provides insurance coverage for low income members that meet the predetermined income requirements. Eligibility for newborns is from the date of birth until the month following their date of birth or they have been enrolled in the Medi-Cal program.",
+    "note": "If their mother\u2019s PCP is assigned to an IPA, financial responsibility for the claim will be determined by processing the claim in accordance with the DOFR Tool Application \u2013 California \u2013 Processing Guideline.",
+    "RevisionSummary": [
+        {
+            "RequestID": "QDC",
+            "Posted/ArchivedDate": "05/24/23",
+            "QDC_Y/N": "N",
+            "Comments": "The document went through the annual QDC review cycle but a thorough review was not completed. This is considered a \"missed review\" and may be subject for compliance risk to state/federal or business requirements."
+        },
+        {
+            "RequestID": "QDC",
+            "Posted/ArchivedDate": "02/08/23",
+            "QDC_Y/N": "N",
+            "Comments": "The document went through the annual QDC review cycle but a thorough review was not completed. This is considered a \"missed review\" and may be subject for compliance risk to state/federal or business requirements."
+        },
+        {
+            "RequestID": "Email Request",
+            "Posted/ArchivedDate": "03/16/21",
+            "QDC_Y/N": "N",
+            "Comments": "No changes needed."
+        }
+    ]
+}

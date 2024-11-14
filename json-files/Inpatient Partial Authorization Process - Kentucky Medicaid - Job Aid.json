@@ -1,0 +1,474 @@
+{
+    "Subject": "Inpatient Partial Authorization Process",
+    "Product": {
+        "Marketplace": false,
+        "Medicaid": true,
+        "Medicare": false,
+        "MMP/MMCP": true
+    },
+    "State": {
+        "ALL": false,
+        "AZ": false,
+        "CA": false,
+        "FL": false,
+        "ID": false,
+        "IL": false,
+        "IA": false,
+        "KY": true,
+        "MA": false,
+        "MI": false,
+        "MS": false,
+        "NE": false,
+        "NV": false,
+        "NM": false,
+        "NY": false,
+        "OH": false,
+        "PR": false,
+        "SC": false,
+        "TX": false,
+        "UT": false,
+        "VA": false,
+        "WA": false,
+        "WI": false
+    },
+    "Line(s) of Business": "All",
+    "Document Owner": "Jay Belew MHI Claims \u2013 AVP: Kory Legel, MKY \u2013 Dir, Health Operations",
+    "Created By": "Lynne Edwards",
+    "Created Date": "04/05/22",
+    "Revised By": "Kenya Thompson",
+    "Approved Date": "07/16/24",
+    "Approved By": "John (Jay) Belew",
+    "Approved Via": "MDR Power Automate",
+    "Approver Title": "MHI \u2013 AVP, Core Operations",
+    "IQR Reviewer": null,
+    "IQR Date": null,
+    "Overview": {
+        "Quick Summary": "This job aid documents guidelines for accurately and consistently processing Inpatient facility claims with a partial approval authorization determination. Claims personnel will follow the procedures outlined in this document to accurately review and process inpatient facility claims with a partial approval authorization determination."
+    },
+    "Contents": [
+        "Overview",
+        "Quick Summary",
+        "Contents",
+        "References",
+        "Exhibits",
+        "General Information",
+        "Processing Instructions",
+        "NetworX Does Not Populate a Cost Outlier Payment",
+        "NetworX Populates a Cost Outlier Payment",
+        "Resubmission Claim with Itemized Bill \u2013 Denied Days are Less than Approved Days",
+        "Resubmission Claim with Itemize Bill \u2013 Approved Days are less than Denied Days",
+        "Remit Codes",
+        "Revision Summary",
+        "Exhibit I: Itemized Bill Example"
+    ],
+    "References": [
+        {
+            "Document": "NetworX Pricer Functionality \u2013 All States Medicaid \u2013 Job Aid",
+            "Note": "Frequently updated reference documents may not provide a link."
+        }
+    ],
+    "Exhibits": [
+        {
+            "Exhibit": "Exhibit I: Itemized Bill Example"
+        }
+    ],
+    "GeneralInformation": {
+        "Criteria": [
+            "Effective DOS: 6/1/2021 \u2013 8/10/2021 and 5/1/2022 forward",
+            "Inpatient stay paying DRG",
+            "Authorization determination includes non-covered (denied) days"
+        ]
+    },
+    "ProcessingInstructions": {
+        "NetworXDoesNotPopulateCostOutlierPayment": {
+            "ClaimID": "111222333444",
+            "DOS": "06/20/2021 \u2013 10/29/2021",
+            "TotalInpatientDays": 131,
+            "ContractRate": "102%",
+            "Authorization": "1234567897",
+            "AuthorizationDetermination": [
+                {
+                    "Line": 1,
+                    "Code": 172,
+                    "DOSFrom": "06/20/2021",
+                    "TotalUnits": 97,
+                    "Status": "APPROVED"
+                },
+                {
+                    "Line": 2,
+                    "Code": 173,
+                    "DOSFrom": "09/25/2021",
+                    "TotalUnits": 14,
+                    "Status": "APPROVED"
+                },
+                {
+                    "Line": 3,
+                    "Code": 114,
+                    "DOSFrom": "10/09/2021",
+                    "TotalUnits": 20,
+                    "Status": "DENIED"
+                }
+            ],
+            "NetworXPricing": {
+                "RateAmount": 57630.44,
+                "RateType": "HSS DRG Price"
+            },
+            "PaymentMethodology": {
+                "BaseDRG": 195072.31,
+                "ContractedRate": "102%",
+                "TotalPayment": 198973.76
+            }
+        },
+        "NetworXPopulatesCostOutlierPayment": {
+            "ClaimID": "222555666777",
+            "DOS": "06/11/2021 \u2013 07/27/2021",
+            "TotalInpatientDays": 46,
+            "ContractRate": "105%",
+            "Authorization": "98765432131",
+            "AuthorizationDetermination": [
+                {
+                    "Line": 1,
+                    "Code": 121,
+                    "DOSFrom": "06/11/2021",
+                    "TotalUnits": 7,
+                    "Status": "APPROVED"
+                },
+                {
+                    "Line": 2,
+                    "Code": 201,
+                    "DOSFrom": "06/18/2021",
+                    "TotalUnits": 13,
+                    "Status": "APPROVED"
+                },
+                {
+                    "Line": 3,
+                    "Code": 203,
+                    "DOSFrom": "07/01/2021",
+                    "TotalUnits": 26,
+                    "Status": "DENIED"
+                }
+            ]
+        }
+    },
+    "NetworX Pricing": {
+        "description": "NetworX Pricing populates Outlier payment.",
+        "details": {
+            "Rate Amount": "11142.73",
+            "Rate Type": "Outlier Payments"
+        }
+    },
+    "Processing Steps": [
+        {
+            "Step": 1,
+            "Action": "For the Payment Methodology, multiply the base DRG by the contracted rate. Example: $18,512.40 x 105% = $19,438.02."
+        },
+        {
+            "Step": 2,
+            "Action": "Go to the Pay page:",
+            "Substeps": [
+                {
+                    "a": "Processor Remit Comments; click Add."
+                },
+                {
+                    "b": "Select remit code N26. Click Save. (End)"
+                }
+            ]
+        }
+    ],
+    "Resubmission Claim with Itemized Bill \u2013 Denied Days are Less than Approved Days": {
+        "description": "In this scenario, the Provider resubmits a new claim with the requested itemized bill (Provider is not required to submit resubmission code 7):",
+        "details": {
+            "New Claim ID": "333888999000",
+            "DOS": "06/11/2021 \u2013 07/27/2021 (Total inpatient days: 46)",
+            "Contracted Rate": "105%",
+            "Authorization": "98765432131"
+        }
+    },
+    "AuthorizationDetermination": [
+        {
+            "Line": 1,
+            "Code": 121,
+            "DOSFrom": "06/11/2021",
+            "TotalUnits": 7,
+            "Status": "APPROVED"
+        },
+        {
+            "Line": 2,
+            "Code": 201,
+            "DOSFrom": "06/18/2021",
+            "TotalUnits": 13,
+            "Status": "APPROVED"
+        },
+        {
+            "Line": 3,
+            "Code": 203,
+            "DOSFrom": "07/01/2021",
+            "TotalUnits": 26,
+            "Status": "DENIED"
+        }
+    ],
+    "ProcessingSteps": [
+        {
+            "Step": 1,
+            "Action": "Review each page of the itemized bill to identify and calculate the charges associated with the denied days from the authorization. Important: Do not include discharge date/charges. Example: The denied days are DOS 07/01/21 \u2013 07/26/2021 (26 days), with a total billed charge of $20,635.50. Refer to Exhibit I: Itemization Bill Example."
+        },
+        {
+            "Step": 2,
+            "Action": "Reference the NetworX Pricer Disallowed Charges section located in the NetworX Pricer Functionality \u2013 All States Medicaid - Job Aid."
+        },
+        {
+            "Step": 3,
+            "Action": "Reverse the original claim following these guidelines:",
+            "SubSteps": [
+                {
+                    "Step": "a",
+                    "Action": "In the original claim, click Reverse Claim. Result: A message dialogue box opens."
+                },
+                {
+                    "Step": "b",
+                    "Action": "Click Yes to the question \u201cYou are about to reverse the current claim, are you sure?.\u201d Result: A new dialogue box opens."
+                },
+                {
+                    "Step": "c",
+                    "Action": "In the Enter Explanation Code/Description for Reversed Claim dialogue box, select remit code CR23. Click Save."
+                },
+                {
+                    "Step": "d",
+                    "Action": "The system will generate a Reversal Claim ID number (\u201cxxxxxxxxxxxR1\u201d). Click OK when the Reversal Claim ID appears. Result: A new dialogue box opens."
+                },
+                {
+                    "Step": "e",
+                    "Action": "Click No to the question \u201cDo you want to synchronize this claim with an Adjustment claim?\u201d Important: If Yes is incorrectly selected, select Okay to Pay the reversed (\u201cR1\u201d) claim to ensure the paid amount is recovered from the provider. Result: A new dialogue box opens."
+                },
+                {
+                    "Step": "f",
+                    "Action": "Click No to the question \u201cWould you like to create a new claim for adjustment?\u201d"
+                }
+            ]
+        },
+        {
+            "Step": 4,
+            "Action": "Once the original claim has been reversed, process and finalize the claim with an itemized bill. Create a memo in the original claim referencing the claim with the itemized bill: Description: Itemize Bill Memo: Itemized claim xxxxxxxxxx received. (End)"
+        }
+    ],
+    "ResubmissionClaim": {
+        "Title": "Resubmission Claim with Itemize Bill \u2013 Approved Days are less than Denied Days",
+        "Description": "When the entire inpatient date span is not within the authorization determination (or on a different authorization), the days not included should also be considered \u201cdenied.\u201d Example: The date span for the inpatient stay below is from 6/11/2021 to 07/03/2021. However, under the Assigned Services tab, the date span only goes up to 7/3/2021. All days starting"
+    },
+    "Review_Non_Clinical_Notes": "FOR CLAIMS DEPT\nAuth Status: Approved with a denied CSR\nServices: Medical Surgical, Approved Authorization Date Span: 6/11/21-7/2/21\nDenied Continued Stay: 7/3/21 forward\nLast covered day 07/02/2021\n-Patient does not qualify for moderate and prolonged extended stay due to lack of following",
+    "Scenario": "In this scenario, the Provider resubmits a new claim with the requested itemized bill (Provider is not required to submit resubmission code 7).",
+    "Claim_Information": {
+        "New_Claim_ID": "4444555888811",
+        "DOS": "06/11/2021 \u2013 08/01/2021 (Total inpatient days: 52)",
+        "Historical_Claim_ID": "222555666777",
+        "Contracted_Rate": "105%",
+        "Authorization": "654987321",
+        "Authorization_Determination": [
+            {
+                "Line": 1,
+                "Code": 171,
+                "DOS_From": "06/11/2021",
+                "Total_Units": 20,
+                "Status": "APPROVED"
+            },
+            {
+                "Line": 2,
+                "Code": 172,
+                "DOS_From": "07/01/2021",
+                "Total_Units": 2,
+                "Status": "DENIED"
+            },
+            {
+                "Line": 3,
+                "Code": 173,
+                "DOS_From": "07/03/2021",
+                "Total_Units": 30,
+                "Status": "DENIED"
+            }
+        ]
+    },
+    "Processing_Steps": [
+        {
+            "Step": 1,
+            "Action": "Review each page of the itemized bill to identify and calculate the charges associated with the approved dates of service, including the discharge date.\nExample: The charges for DOS 06/11/21 \u2013 6/30/2021 (20 days) and 8/01/2021 (discharge date) are included in the calculation for the new eligible charges."
+        },
+        {
+            "Step": 2,
+            "Action": "Update the NetworX Total Charges field with the new eligible charges."
+        },
+        {
+            "Step": 3,
+            "Action": "Pay the Total Reimb amount multiplied by the contracted rate."
+        },
+        {
+            "Step": 4,
+            "Action": "Reverse the original claim following these guidelines:",
+            "Sub_Steps": [
+                {
+                    "Step": "a",
+                    "Action": "In the original claim, click Reverse Claim.\nResult: A message dialogue box opens."
+                },
+                {
+                    "Step": "b",
+                    "Action": "Click Yes to the question \u201cYou are about to reverse the current claim, are you sure?\u201d.\nResult: A new dialogue box opens."
+                }
+            ]
+        }
+    ],
+    "steps": [
+        {
+            "step": "c",
+            "instruction": "In the Enter Explanation Code/Description for Reversed Claim dialogue box, select remit code CR23. Click Save."
+        },
+        {
+            "step": "d",
+            "instruction": "The system will generate a Reversal Claim ID number (\u201cxxxxxxxxxxR1\u201d). Click OK when the Reversal Claim ID appears. Result: A new dialogue box opens."
+        },
+        {
+            "step": "e",
+            "instruction": "Click No to the question \u201cDo you want to synchronize this claim with an Adjustment claim?\u201d Important: If Yes is incorrectly selected, select Okay to Pay the reversed (\u201cR1\u201d) claim to ensure the paid amount is recovered from the provider."
+        },
+        {
+            "step": "f",
+            "instruction": "Click No to the question \u201cWould you like to create a new claim for adjustment?\u201d"
+        },
+        {
+            "step": "5",
+            "instruction": "Once the original claim has been reversed, process and finalize the claim with an itemized bill. Create a memo in the original claim referencing the claim with the itemized bill: Description: Itemize Bill Memo: Itemized claim xxxxxxxxxx received. (End)"
+        }
+    ],
+    "remit_codes": [
+        {
+            "code": "CR23",
+            "description": "Adjusted \u2013 Additional Information Received"
+        }
+    ],
+    "revision_summary": [
+        {
+            "request_id": "RITM4712307",
+            "posted_archived_date": "07/16/24",
+            "ar_y_n": "N",
+            "comments": "Replaced Web.Strat with NetworX and updated screenshots. Added Reference section and referenced in the document. Deleted steps 2-4 under the Resubmission Claim with Itemized Bill \u2013 Denied Days are Less than Approved Days section."
+        },
+        {
+            "request_id": "5777",
+            "posted_archived_date": "06/27/23",
+            "ar_y_n": "Y",
+            "comments": "Updated Step 2 in the Process Steps provided in the \u201cWeb.Strat Populates a Cost Outlier Payment\u201d section."
+        },
+        {
+            "request_id": "4994",
+            "posted_archived_date": "04/13/22",
+            "ar_y_n": "Y",
+            "comments": "New Document."
+        }
+    ],
+    "Exhibit": "Itemized Bill Example",
+    "Patient": {
+        "Name": null,
+        "Account": null,
+        "Admit Date": null,
+        "Discharge Date": null
+    },
+    "Diagnosis Codes": [
+        "K40.01",
+        "P27.1",
+        "781.1",
+        "E87.3",
+        "P52.0",
+        "796.1",
+        "M33.3",
+        "E87.74",
+        "Q54.2",
+        "D64.9",
+        "Z32.2",
+        "T27.20",
+        "R13.12",
+        "K21.9",
+        "Q53.10",
+        "H35.113"
+    ],
+    "Bill Details": [
+        {
+            "Date": "06/29/21",
+            "Service": "000447",
+            "Rev Code": "271",
+            "Procedure Code": null,
+            "Description": "O2 EA HR",
+            "Qty": 3,
+            "Amount": 78.0
+        },
+        {
+            "Date": "06/29/21",
+            "Service": "000862",
+            "Rev Code": "305",
+            "Procedure Code": "85025",
+            "Description": "BLOOD COUNT HEMOGRAM/PLT CBC W AUTO DIFF",
+            "Qty": 1,
+            "Amount": 54.0
+        },
+        {
+            "Date": "06/30/21",
+            "Service": "027576",
+            "Rev Code": "258",
+            "Procedure Code": null,
+            "Description": "DEXTROSE 10% 500ML",
+            "Qty": 1,
+            "Amount": 29.91
+        },
+        {
+            "Date": "06/30/21",
+            "Service": "016519",
+            "Rev Code": "258",
+            "Procedure Code": null,
+            "Description": "NACL 4MEQ/ML INJ",
+            "Qty": 10,
+            "Amount": 5.3
+        },
+        {
+            "Date": "06/30/21",
+            "Service": "031839",
+            "Rev Code": "272",
+            "Procedure Code": null,
+            "Description": "CONNECTOR T",
+            "Qty": 1,
+            "Amount": 37.0
+        },
+        {
+            "Date": "07/01/21",
+            "Service": "050181",
+            "Rev Code": "272",
+            "Procedure Code": null,
+            "Description": "IV SFT CATH",
+            "Qty": 17,
+            "Amount": 12.0
+        },
+        {
+            "Date": "07/01/21",
+            "Service": "051086",
+            "Rev Code": "272",
+            "Procedure Code": null,
+            "Description": "BIFUSE ADM SET 23208S",
+            "Qty": 1,
+            "Amount": 6.0
+        },
+        {
+            "Date": "07/02/21",
+            "Service": "057061",
+            "Rev Code": "301",
+            "Procedure Code": "36416",
+            "Description": "COLLECT OF CAP BLOOD SPEC HEELSTICK",
+            "Qty": 1,
+            "Amount": 1.0
+        },
+        {
+            "Date": "07/02/21",
+            "Service": "025335",
+            "Rev Code": "301",
+            "Procedure Code": "80048",
+            "Description": "BASIC METABOLIC PNL CALCIUM TOTAL",
+            "Qty": 1,
+            "Amount": 47.0
+        }
+    ]
+}

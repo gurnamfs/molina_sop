@@ -1,0 +1,810 @@
+{
+    "Arizona": {
+        "standard_filing_time": {
+            "contracted_provider": "Six months from DOS.",
+            "non_contracted_provider": "Six months from DOS."
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Retro-eligibility - A claim must be submitted no later than 6 months from the date that eligibility is posted.",
+            "For hospital inpatient claims, 'date of service' means the date of discharge of the patient."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "A provider must institute any claim dispute challenging the claim denial or adjudication within 12 months from one of the following:",
+            "▪ The ending date of service",
+            "▪ The date of the member’s eligibility posting",
+            "▪ For a hospital inpatient claim:",
+            "   ▪ Within 12 months from the date of discharge, or",
+            "   ▪ Within 60 days after the date of the denial of a timely claim submission, whichever is later.",
+            "Note:",
+            "▪ The date of receipt by Office of Administrative Legal Services (OALS) is considered the date the claim dispute is filed.",
+            "▪ For a retro-eligibility claim, the provider must institute any claim dispute within 12 months from the date of the eligibility posting."
+        ],
+        "tpl_cob_claims": [
+            "Six months from the date of contest, denial or notice from the primary payer (date on EOB) to submit COB payment information."
+        ],
+        "corrected_claims": [
+            "Twelve months from DOS."
+        ]
+    },
+    "California": {
+        "standard_filing_time": {
+            "contracted_provider": [
+                "The 'standard' is 90 days from DOS.",
+                "However, some providers have different limits in the contract.",
+                "The system is configured to fire edit 311 appropriately based on the timely filing provisions in the provider's contract (not less than 90 days)."
+            ],
+            "non_contracted_provider": "180 days from DOS",
+            "out_of_state_providers": "180 days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Health plan decision to make an exception due to unusual circumstances."
+        ],
+        "initial_claim_denied_for_timely_filing": [
+            "If the initial claim was denied for lack of timely filing and then the provider resubmits the claim with acceptable proof that the initial claim was filed timely, pay if submitted within 365 days of the last action date on the claim."
+        ],
+        "tpl_cob_claims": [
+            "180 days from the date of contest, denial or notice from the primary payer (date on EOB) to submit COB payment information.",
+            "The 180 days does not apply to the provider exception list - see below."
+        ],
+        "corrected_initial_claims_and_ucsd": "180 days from DOS",
+        "additional_information_requested_and_received": "180 days from paid or denied date"
+    },
+    "Florida": {
+        "standard_filing_time": {
+            "contracted_provider": [
+                "For outpatient_and_professional_services Claims(s) must be mailed or electronically transferred to the primary organization within 6 months after the date of service (DOS).",
+                "For inpatient_services Claim(s) must be submitted within 6 months after the discharge date."
+            ],
+            "non_contracted_provider": [
+                "For outpatient_and_professional_services Claims(s) must be mailed or electronically transferred to the primary organization within 12 months after the date of service (DOS).",
+                "For inpatient_services Claim(s) must be submitted within 12 months after the discharge date."
+            ]
+        },
+        "exceptions_to_timely_filing_limits": [
+            "All exceptions are based on contractual agreement.",
+            "Exceptions to the claim submission time limit may be allowed, if the claim meets one or more of the following conditions:",
+            "▪ New clean claim submitted within six months of the date of the void of original claim payment date.",
+            "▪ Delay in recipient eligibility determination by either the Department of Children and Families (DCF) or the Social Security Administration (SSA).",
+            "▪ Medicaid delay in updating the eligibility file.",
+            "▪ Court or hearing decision.",
+            "▪ Court ordered or statutory action.",
+            "▪ System error or fiscal agent processing error on a claim that was originally submitted within the time filing limit from the date of service.",
+            "▪ Within 6 months (participating providers) or 12 months (non-participating providers) from the date the provider has been furnished with the correct name and address of the patient's health plan.",
+            "• Due to contractual agreement, there are some contracted providers with timely filing limits exceeding 6 months. These providers are configured on the contract to allow proper processing of their claims. Examples include Baptist Medical Center of Miami and Baycare Health Systems.",
+            "Note: The Managed Care Plan shall not deny Medicare crossover claims solely based on the period between the Date of Service and the date of clean claim submission unless the period exceeds three (3) years."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "If additional information is received past the timely filing requirement as outlined in this document's Florida requirements, determine when the additional information was requested and only allow if the requested information was received within 35 days of the request."
+        ],
+        "tpl_cob_claims": [
+            "For medicare_crossover_claims:",
+            "The filing limit for Medicare claims crossing over to Medicaid is the greater of 36 months from the date of service or 12 months from Medicare's adjudication date.",
+            "Provider must submit the additional information or documentation, as specified on the itemized list of additional information or documents needed to process the claim within 35 days after receipt of the notification. Additional information is considered submitted on the date it is electronically transferred or mailed.",
+            "ltss_services_medicare_crossover_only:",
+            "If an EOB is submitted, COB Timely filing should be applied (the greater of 36 months from the date of service or 12 months from Medicare's adjudication date, whichever is later).",
+            "If an EOB is not submitted, Standard Timely Filing should be applied (PAR: 6 months after the date of service, NONPAR: 12 months after the date of service).",
+            "tpl_general:",
+            "Claims for recipients who have Medicare or other insurance must be submitted to a third party payer prior to sending the claim to Medicaid.",
+            "Claims for recipients who have third party insurance, other than Medicare, must be mailed or electronically transferred to the secondary organization within 90 days after final determination by the primary organization.",
+            "Adjustments: use the date of the EOB submitted with the original claim."
+        ],
+        "corrected_claims": {
+            "contracted_provider": [
+                "For outpatient_and_professional_services Claims(s) must be mailed or electronically transferred to the primary organization within 6 months after the date of service (DOS).",
+                "For inpatient_services Claim(s) must be submitted within 6 months after the discharge date."
+            ],
+            "non_contracted_provider": [
+                "For outpatient_and_professional_services Claims(s) must be mailed or electronically transferred to the primary organization within 12 months after the date of service (DOS).",
+                "For inpatient_services Claim(s) must be submitted within 12 months after the discharge date."
+            ]
+        }
+    },
+    "Idaho": {
+        "standard_filing_time": {
+            "contracted_provider": "365 days from DOS",
+            "non_contracted_provider": "365 days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Health plan decision to make an exception due to unusual circumstances.",
+            "▪ Provider has a court order or hearing decision which caused the claim to be submitted after the billing deadline.",
+            "▪ Services for dually eligible participants (those who have both Medicare and Medicaid) must be billed to Idaho Medicaid within 6 months of the date of payment/date of the explanation of benefits (EOB) or Medicare Remittance Notice (MRN).",
+            "▪ If the participant is approved for Medicaid coverage after the date of service, there will be a special letter issued by IDHW called a Notice of Action explaining the retroactive eligibility. To be considered within the timely filing limits, the claim for this participant must be submitted within 12 months (365 days) of the notice date on the letter."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "Proof of Timely Filing must be submitted within 365 days from the DOS."
+        ],
+        "tpl_cob_claims": [
+            "COB: 12 months from the date the claim was processed, denied, or retracted by the primary carrier (i.e. the date of the primary carrier's EOB).",
+            "Note: If a claim is timely, but the related EOB or needed documentation arrives after the timely filing limit has expired, refer the claim to a Supervisor or Manager for review and process as instructed."
+        ],
+        "corrected_claims": [
+            "365 days from DOS"
+        ]
+    },
+    "Illinois": {
+        "standard_filing_time": {
+            "contracted_provider": "Varies based upon provider contract.",
+            "all_providers": "180 days from DOS",
+            "proof_of_timely_filing may be required such as":[
+                "A copy of a computer print screen with all of the following: the billed date within the timely filing limit which includes the patient’s name, date of service, billed amount, submitted date and insurance where charges were submitted.",
+                "EDI payor acceptance reports; must include patient name, date of service, billed amount, submitted date and insurance where charges were submitted.",
+                "EOB received from another payer recouping the payment previously made due to retro-active disenrollment leaving Molina as primary as long as receipt date is within 90 days from the date on the EOB take back for date of service or within the standard timely filing timeframe."
+            ]
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions to the claim submission time limit may be allowed, if the claim meets one or more of the following conditions:",
+            "▪ Delay in recipient eligibility determination by The Department of Healthcare and Families (HFS)",
+            "▪ Court or hearing decision",
+            "▪ Court ordered or statutory action",
+            "▪ System error or fiscal agent processing error on a claim that was originally submitted within the time filing limit from the date of service",
+            "▪ Third party insurance, other than Medicare, must be received by Medicaid or the Medicaid fiscal agent no later than 12 months from the date of service or 180 days from the date of third party insurance payment or denial."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "For claims re-submitted with additional details, the additional details are subject to the 'Timely Filing Limitations' set forth in the provider's contract."
+        ],
+        "appeals_and_disputes": [
+            "Please reference the Molina provider manual for further information regarding the claims appeals and claims dispute process.",
+            "Providers have 90 days to provide a written dispute to Molina from the claim payment date."
+        ],
+        "adjustments": [
+            "Providers seeking a redetermination of a claim previously adjudicated must submit the claim within 90 days of the original remittance advice date."
+        ],
+        "corrected_claims": [
+            "Corrected claims must be received within 180 days of the original date of service for providers and claims need to be marked as corrected."
+        ]
+    },
+    "Iowa": {
+        "standard_filing_time": {
+            "in_network_provider": "180 calendar days from the date of service unless otherwise noted in the provider agreement.",
+            "out_of_network_provider": "365 calendar days from the date of service."
+        },
+        "appeals_and_disputes": [
+            "For disputes and first level appeals, providers have 180 days from the Explanation of Benefits (EOB)",
+            "For second level appeals, providers have 30 days from the original decision notated on the provider remittance advice from the dispute/first level appeal."
+        ],
+        "corrected_claims": [
+            "365 days from the last adjudication date for up to two years from the date of service"
+        ],
+        "payment_reconsideration": [
+            "Claims payment reconsideration is the initial request to investigate the outcome of the finalized claim.",
+            "Claim payment reconsiderations are accepted in writing within 180 days from the date on the Explanation of Payment (EOP) or the Provider Remittance Advice (PRA).",
+            "Reconsiderations submitted after the 180 days will be considered untimely and be denied unless good cause can be validated."
+        ],
+        "tpl_cob_claims": [
+            "365 calendar days after the final determination by the primary payer."
+        ]
+    },
+    "Kentucky": {
+        "standard_filing_time": {
+            "cms_1500": "365 days from date of service (DOS)",
+            "ub_04": "Claims must be submitted by the Provider to Passport within 365 calendar days after the discharge for inpatient services or the Date of Service for outpatient services unless otherwise specified in a provider's contract.",
+            "retro_eligibility": "365 days from the date that eligibility was posted",
+            "appeals_dispute": "60 calendar days from the date of our adverse determination to file an appeal.",
+            "encounter_submission": "If a claim fails compliance with encounter submission state requirements, the rejected claim must be resubmitted within the timely filing limits.",
+            "post_pay_record_requests": "If medical records are requested that result in an adverse determination that requires a corrected claim and the original 365-day timely filing limit has expired, the corrected claim must be submitted within 60 days from the date of the recovery request. Normal timely filing limits apply to corrected claims if they are submitted within the original 365-day timely filing limit.",
+            "recoupments": "An overpayment notification will be provided in advance of any recoupment and if the recoupment occurs after the original 365-day claim timely filing limit, the corrected claim must be submitted within 60 days from the date of recoupment. Normal timely filing limits apply to the corrected claims if they are submitted within the original 365-day timely filing limit.",
+            "reimbursement": "Passport does not reimburse for claims received after the timely filing guidelines. Claims that exceed the timely filing limit will be denied as 'The time limit for filing has expired'."
+        },
+        "exceptions_to_timely_filing_limits": [
+            "KY Health plan decision to make an exception due to unusual circumstances",
+            "Retro-eligibility, claim must be submitted no later than 365 days from the date that eligibility is posted",
+            "Retro-eligibility adjustments"
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "365 days from date of claim denial (denied claims filed within the standard timely filing limit may be resubmitted for reconsideration by the provider/contractor within 365 calendar days from the date of denial)",
+            "Request for Invoice",
+            "Requests for primary EOB follow the TPL/COB claims classification"
+        ],
+        "tpl_cob_claims": [
+            "365 days from the date of the primary EOB"
+        ],
+        "corrected_claims": [
+            "CMS-1500: 365 days from date of service (DOS)",
+            "If the corrected claim is related to new/changed/corrected primary EOB payment information, follow TPL/COB claims classification",
+            "UB-04: Claims must be submitted by Provider to Passport within 365 calendar days after the discharge for inpatient services or the Date of Service for outpatient services unless otherwise specified in a provider's contract.",
+            "If the corrected claim is related to new/changed/corrected primary EOB payment information, follow TPL/COB claims classification",
+            "Normal timely filing limits apply to corrected claims if they are submitted within the original 365-day timely filing limit."
+        ],
+        "remit_codes": [
+            "29: The time limit for filing has expired."
+        ]
+    },
+    "Massachusetts": {
+        "standard_filing_time": {
+            "contracted_provider": "90 days from DOS",
+            "non_contracted_provider": "90 days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": "n/a",
+        "corrected_claims": [
+            "PAR: 30 days from date of original remit",
+            "Non-PAR: 365 days from date of original remit"
+        ]
+    },
+    "Medicare": {
+        "standard_filing_time": {
+            "contracted_provider": "365 days from DOS",
+            "contract_exception": "MA providers have 90 days from DOS",
+            "non_contracted_provider": "365 days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Molina administrative or claim processing error occurred, including:",
+            "   - The provider received misinformation from Molina personnel, Medicare contractor, or agent of the Centers for Medicare and Medicaid Services (CMS) acting within the scope of its authority.",
+            "   - Other administrative errors by Molina or MHI Claims or its contracted vendors that can be documented"
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "The last day of the 6th calendar month following the month in which the error is rectified by notification to either the provider, supplier, or member."
+        ],
+        "tpl_cob_claims": [
+            "365 days from date of primary EOB"
+        ],
+        "corrected_claims": [
+            "365 days from paid or denied date"
+        ]
+    },
+    "Michigan": {
+        "standard_filing_time": {
+            "contracted_provider": "365 days from DOS",
+            "non_contracted_provider": "365 days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "Molina administrative or claim processing error occurred, including:",
+            "▪ The provider received erroneous written instructions from Molina personnel",
+            "▪ Molina UM personnel failed to enter (or entered erroneous) authorization, level of care, or other auth-related information in the system",
+            "▪ Molina UM issued an erroneous prior authorization",
+            "▪ Other administrative errors by Molina or MHI Claims or its contracted vendors that can be documented",
+            "Medicaid member's eligibility or authorization was established retroactively:",
+            "▪ Member's eligibility or authorization was established more than twelve months after the DOS, and the provider submitted the initial invoice within twelve months of the establishment of member's eligibility/authorization.",
+            "▪ Member’s eligibility reflected fee-for-service (FFS) Medicaid at time of service and FFS Medicaid paid the claim and later recouped the payment. The provider has 60 days from the date of the recovery to bill the Managed Care Plan (Molina) with proof attached to the claim."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "365 days from paid or denied date"
+        ],
+        "tpl_cob_claims": [
+            "180 days from date of primary EOB"
+        ],
+        "corrected_claims": [
+            "365 days from paid or denied date"
+        ]
+    },
+    "Mississippi": {
+        "standard_filing_time": {
+            "contracted_provider": "180 days from date of service (DOS). For timely filing purposes, the 'Through' date shall be used for determining claims filing.",
+            "non_contracted_provider": "180 days from date of service (DOS). For timely filing purposes, the 'Through' date shall be used for determining claims filing."
+        },
+        "exceptions_to_timely_filing_limits": [
+            "The following providers have 365 days for timely filing:",
+            "• Bay Springs Dialysis Unit",
+            "• Collins Dialysis Unit",
+            "• Columbia Dialysis Unit",
+            "• Hattiesburg Clinic Nephrology Vascular Access Center",
+            "• Hattiesburg Clinic PA",
+            "• Hattiesburg Clinic PA - Ambulatory Surgery Center",
+            "• Hattiesburg Dialysis Unit",
+            "• Laurel Dialysis Unit",
+            "• Lowery A Woodall Ambulatory Surgery Center",
+            "• Pachuta Dialysis Unit",
+            "• Pearl River Dialysis Unit",
+            "• Richton Dialysis Unit",
+            "• Silver Creek Dialysis Unit",
+            "• Tylertown Dialysis Unit",
+            "• Waynesboro Dialysis Unit",
+            "• West Hattiesburg Clinic Dialysis",
+            "• Wiggins Dialysis Unit",
+            "Note: For claims requiring manual review, timely filing is waived for a limited duration for Gilmore Medical Center (acquired North Mississippi Health Svcs on 01/01/19) for DOS from 01/01/19 through 07/31/19. If applicable, override timely filing edits.",
+            "Note: Process any corrected claims from Provider Fast Pace NPI 1851050579 that is billed from the date range of 09/01/2022 - 01/31/23 and override any timely filing edits that may fire."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "If a provider resubmits a denied claim with additional information or attachments, the claim will pend for manual intervention.",
+            "Denied claims filed within the standard timely filing limit may be resubmitted for reconsideration by the contractor within 90 calendar days from the date of denial."
+        ],
+        "tpl_cob_claims": [
+            "180 days from the paid/denied date on the primary carrier's EOB."
+        ],
+        "corrected_claims": [
+            "Corrected claims must be submitted within 90 days from the paid/denied date."
+        ]
+    },
+    "Nebraska": {
+        "standard_filing_time": "The timely filing limit for both Par and Non Par providers is 180 days from the date of service.",
+        "exceptions_to_timely_filing_limits": [
+            "This time limitation does not apply to:",
+            "• Retroactive adjustments paid to providers who are reimbursed under a retrospective payment system.",
+            "• Claims which have been filed in a timely manner for payment by Medicare, for which the Department may pay a Medicaid claim relating to the same services. Claims for the Medicaid portion must be submitted to the Department within six months from the date of the Medicare remittance advice.",
+            "• Claims from providers under investigation for alleged fraud or abuse.",
+            "• Payments made:",
+            "   ○ In accordance with a court order;",
+            "   ○ To carry out hearing decisions or agency corrective actions taken to resolve a dispute;",
+            "   ○ To extend the benefits of a hearing decision, corrective action, or court order to others in the same situation as those directly affected by it;",
+            "   ○ Specified Third party casualty situations"
+        ]
+    },
+    "Nevada": {
+        "standard_filing_time": {
+            "in_state_network_provider": "180 calendar days after the date of discharge for inpatient services or date of service for outpatient services unless otherwise noted in the provider agreement.",
+            "out_of_state_provider": "365 calendar days after the date of discharge for inpatient services or date of service for outpatient services unless otherwise noted in the provider agreement."
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Retro-eligibility - A claim must be submitted no later than 6 months from the date that eligibility is posted.",
+            "For hospital inpatient claims, 'date of service' means the date of discharge of the patient."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "• Requests for additional information regarding a claim must be sent to the provider within 20 days of claim receipt.",
+            "• A claim where additional information has been requested must be paid or denied within 30 days of receipt of requested information."
+        ],
+        "tpl_cob_claims": [
+            "365 days from the date of service (DOS) or date of eligibility decision, whichever is later."
+        ],
+        "corrected_claims": [
+            "▪ 180 calendar days from the last date of service for contracted providers",
+            "• 365 calendar days from the last date of service for non-contracted providers"
+        ]
+    },
+    "New Mexico": {
+        "standard_filing_time": {
+            "contracted_and_non_contracted_provider": "90 days from the DOS for original submission",
+            "indian_health_services_and_tribal_facilities_providers": "Two years from the DOS",
+            "payment_limit": "All payments must be finalized within two years of the DOS. No payment is made on a claim that is over two years old, regardless of the submission date."
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "For Newborns",
+            "▪ 90 days from DOS for original submission; 6 months from the EOB date on resubmissions. Please use the discharge date for inpatient facility claims.",
+            "▪ All newborn claims must be finalized within 2 years of DOS.",
+            "▪ If a newborn is added retroactively, timely filing begins from the date Molina was notified.",
+            "Retroactive Eligibility",
+            "▪ Claims for services provided during a period for which retroactive eligibility has been established must be filed within 90 days of the date retroactive eligibility is added to the fiscal agent eligibility file. Please use the discharge date for inpatient facility claims.",
+            "MHNM will apply NMAC Program Rules for timely filing:",
+            "• 90 days for retroactive eligibility, claim resubmissions, claim reconsideration reviews, and claim adjustment requests"
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "If additional information was requested:",
+            "• 90 days from Molina's original remittance advice date regardless of type of denial/dispute.",
+            "Resubmission or Adjustment Requests:",
+            "• 90 days of dated correspondence from Molina referencing the claim (correspondence must be specific to the referenced claim)",
+            "• One year from the date of service when Molina is the secondary payer when the primary carrier's filing limit is one year, and 90 days of the other carrier's EOB",
+            "• 90 days of the other carrier's EOB when submitted to the wrong payer"
+        ],
+        "tpl_cob_claims": [
+            "• 90 days from primary paid/denied date not to exceed 210 calendar days from the DOS."
+        ],
+        "corrected_claims": [
+            "• 90 calendar days of the most recent adjudicated date of claim"
+        ]
+    },
+    "New York": {
+        "standard_filing_time": {
+            "contracted_provider": "90 Days from Date of Service",
+            "exception": "SUNY contracted facilities have 180 days for timely filing",
+            "non_contracted_provider": "90 days"
+        },
+        "important_notes": [
+            "If no timely filing edit fires (for example, 311, 541, 542, 543, 6289), process the claim based on standard claim processing guidelines.",
+            "For inpatient claims specific to birth and maternity DRG codes, if denied for timely filing, override and process the claim accordingly.",
+            "Refer to the Timely Filing Requirements by State - Job Aid for New York-specific timely filing regulations regarding birth and maternity claims."
+        ],
+        "exceptions_to_timely_filing_limits": [
+            "An APR DRG claim cannot be billed until the member is discharged.",
+            "ALL APR DRG claims must include the discharge date regardless of the status code of the member.",
+            "When the discharge date is different than the statement through date, the discharge date is reported using Occurrence Code 42."
+        ],
+        "tpl_cob_claims": [
+            "90 days from primary carrier denial/payment"
+        ],
+        "corrected_claims": [
+            "70 days from original date of payment/denial"
+        ]
+    },
+    "Ohio": {
+        "standard_filing_time": {
+            "all_par_non_par_providers": "365 days from the date of service (DOS) or 365 days from the discharge date for inpatient claims."
+        },
+        "dispute_time_limit": {
+            "contracted_providers_prior_to_02_01_23": "120 days from the original remittance advice date or the date the provider asserts they submitted the original claim.",
+            "non_contracted_providers_prior_to_02_01_23": "180 days from the original remittance advice.",
+            "all_par_non_par_providers_on_and_after_02_01_23": "365 days from the DOS or 60 days from the original remittance advice date, whichever is later."
+        },
+        "exceptions_to_dispute_timely_filing_limits": "See Exceptions linked below\nHP-OH-PC - Contract Exceptions Grid - All Documents (sharepoint.com)",
+        "tpl_cob_claims": {
+            "contracted_providers_prior_to_02_01_23": [
+                "The greater of: 90 days from the date of the other carrier's EOB or the number of days from the DOS (based on either the provider contract or the standard 120 days)."
+            ],
+            "non_contracted_providers_prior_to_02_01_23": [
+                "The greater of: 180 days from the date of the other carrier's EOB, or 365 days from the DOS."
+            ],
+            "all_par_non_par_providers_on_and_after_02_01_23": [
+                "The greater of: 90 days from the date of the other carrier's EOB or 365 days from the DOS."
+            ]
+        },
+        "corrected_claims": {
+            "all_par_non_par_providers": "365 days from the remit date of the claim number that is being corrected as noted on the claim image."
+        },
+        "exception_providers_for_cob_claims": [
+            {
+                "provider_name": "Atrium Medical Center 5948505",
+                "timely_filing_limit": "120 days from Primary EOB (DOS/discharge date prior to 1/1/13 only)"
+            },
+            {
+                "provider_name": "Gallipolis - HC - 2753131",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Good Samaritan Hospital 3293565",
+                "timely_filing_limit": "120 days from Primary EOB (DOS/discharge date prior to 1/1/13 only)"
+            },
+            {
+                "provider_name": "Holzer Clinic – 4046428",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Jewish Hospital LLC 3024819",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "JOHN A ROSENFIELD MD 0426364",
+                "timely_filing_limit": "120 days from Primary EOB"
+            },
+            {
+                "provider_name": "Kettering Medical Center Network",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Marietta Memorial Hospital - 5511566",
+                "timely_filing_limit": "120 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy Franciscan Hospital Mt. Airy 0171362",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy Franciscan Hospital Western Hills 7645883",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy Hospital Anderson 6639409",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy Hospital Clermont 0217447",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy Hospital Fairfield 5887278",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy Memorial Hospital 5887901",
+                "timely_filing_limit": "90 days from Primary EOB"
+            },
+            {
+                "provider_name": "Mercy St Charles Hospital - 7644259",
+                "timely_filing_limit": "12 months"
+            },
+            {
+                "provider_name": "Miami Valley Hospital 5935608",
+                "timely_filing_limit": "120 days from Primary EOB (DOS/discharge date prior to 1/1/13 only)"
+            },
+            {
+                "provider_name": "Nationwide Childrens Hospital UB-1473276",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Ohio State University Medical Center-D296543682 James Cancer Hospital 0805990",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Southeastern Ohio Regional Medical Ctr 3486259",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Springfield Regional Medical Center 5887634",
+                "timely_filing_limit": "90 days from Primary EOB"
+            },
+            {
+                "provider_name": "The Drake Center 2315202",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "The University Hospital 0349331",
+                "timely_filing_limit": "12 months"
+            },
+            {
+                "provider_name": "The University Hospital Ahuja Medical Center - 3150067",
+                "timely_filing_limit": "12 months"
+            },
+            {
+                "provider_name": "UHHS Conneaut Medical Center - 1058662",
+                "timely_filing_limit": "12 months"
+            },
+            {
+                "provider_name": "UHHS Geauga Regional Hospital - 3106758",
+                "timely_filing_limit": "12 months"
+            },
+            {
+                "provider_name": "University Pointe Surgical Hospital 2536107",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "West Chester Medical Center 2943882",
+                "timely_filing_limit": "180 days from Primary EOB"
+            },
+            {
+                "provider_name": "Wood County Hospital Assn -9626506",
+                "timely_filing_limit": "120 days from Primary EOB"
+            }
+        ],
+        "exception_providers_for_corrected_claims": [
+            {
+                "provider_name": "Cincinnati Children's Hospital Medical Center-1473285",
+                "adjustment_timeline": "2 years"
+            },
+            {
+                "provider_name": "Pediatric Academic Association-476131",
+                "adjustment_timeline": "180 days from Primary EOB"
+            }
+        ]
+    },
+    "Puerto Rico": {
+        "standard_filing_time": {
+            "contracted_provider": "90 calendar days from Date of Service",
+            "non_contracted_provider": "90 calendar days from Date of Service"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ PR Government Hospitals and CDTs (Centros de Diagnósitco y Tratamiento) have 180 calendar days",
+            "▪ Timely filing limits would not apply to a claim that was originally processed incorrectly by the Claims Department.",
+            "Note: The following private hospitals have a timely filing of 180 calendar days from the Date of Service:",
+            "  ▪ Mennonite General Hospital",
+            "  ▪ Aibonito",
+            "  ▪ San Jorge Children's Hospital",
+            "The following government hospitals have a timely filing of 180 calendar days from the Date of Service:",
+            "  ▪ Hospital Pediatrico Universitario",
+            "  ▪ Hospital de la Universidad de Puerto Rico/ Dr. Federico Trilla",
+            "  ▪ Hospital Municipal de San Juan/ Dr. Rafael Lopez Nussa",
+            "  ▪ Corporacion del Centro Cardiovascular de Puerto Rico y Del Caribe",
+            "  ▪ Hospital Oncologico",
+            "  ▪ Hospital Universitario de Adulto",
+            "  ▪ Hospital Psiquiatrico General/ Dr.Ramon Fernandez Marina"
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "90 calendar days from Explanation of Payment (EOP)"
+        ],
+        "tpl_cob_claims": [
+            "The time limit for filing claims for secondary processing:",
+            "▪ 90 calendar days from the primary payer's remittance advice date (Explanation of Payment Date/ Paid Date)."
+        ],
+        "adjustments": [
+            "Providers seeking a redetermination of a claims previously adjudicated (adjustment) have a timely filing of 90 calendar days from MHPR's original remittance advice date (Explanation of Payment Date/ Paid Date)."
+        ],
+        "corrected_claims": [
+            "Corrected claims are considered new claims and must be received within the Timely Filing Limits set forth under contracted and non-contracted providers:",
+            "▪ 90 calendar days from EOP",
+            "▪ Corrected Claims for PR Government Hospitals and CDT's (Centros de Diagnósitco y Tratamiento) have 90 calendar days from EOP"
+        ]
+    },
+    "South Carolina": {
+        "standard_filing_time": {
+            "contracted_provider": "365 days from DOS",
+            "non_contracted_provider": "365 Days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "No Exceptions Currently Listed"
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "Proof of Timely Filing must be submitted within 365 days from the DOS."
+        ],
+        "tpl_cob_claims": [
+            "365 Days from date of primary EOB"
+        ],
+        "corrected_claims": [
+            "365 Days from DOS"
+        ]
+    },
+    "Texas": {
+        "standard_filing_time": {
+            "contracted_provider": "95 days from DOS, for providers within TX.",
+            "non_contracted_provider": "95 days from DOS, for providers within TX.",
+            "hca_facilities": "180 days from DOS",
+            "utmb_claims": "180 days to submit a corrected claim from last disposition.",
+            "out_of_state_providers": "365 Days from the DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "Weekends and Holidays: For claims payment to be considered, providers must adhere to the time limits described in this section.",
+            "Claims received after the following claims filing deadlines are not payable because Texas Medicaid does not provide coverage for late claims.",
+            "Exception: Unless otherwise stated below, claims must be received by TMHP within 95 days of each DOS.",
+            "Appeals must be received by TMHP within 120 days of the disposition date on the R&S Report on which the claim appears.",
+            "A 95-day or 120-day appeal filing deadline that falls on a weekend or a holiday is extended to the next business day following the weekend or holiday.",
+            "Only the following holidays in 2018 extend the deadlines:",
+            "• January 1, 2018 New Year's Day",
+            "• January 15, 2018 Martin Luther King, Jr. Day",
+            "• February 19, 2018 Presidents Day",
+            "• May 28, 2018 Memorial Day",
+            "• July 4, 2018 Independence Day",
+            "• September 3, 2018 Labor Day",
+            "• October 8, 2018 Columbus Day",
+            "• November 12, 2018 Veterans Day",
+            "• November 22, 2018 Thanksgiving Day",
+            "• November 23, 2018 Day after Thanksgiving",
+            "• December 24, 2018 Christmas Eve Day",
+            "• December 25, 2018 Christmas Day",
+            "NPI Attestation: Providers NPI must be attested with TMHP.",
+            "Once attested provider will receive attestation letter from TMHP. Provider has 95 days from the date of attestation letter to file claims for services rendered prior to the date of attestation letter.",
+            "System Problems: There is delay due to electronic claim or system implementation problems.",
+            "Eligibility: For members that have applied for Medicaid but do not have a Medicaid ID number, claims must be filed w/in 95 days from the date the eligibility was added to the state eligibility file system.",
+            "There is delay or error in the eligibility determination of a member, or delay due to erroneous written information from HHSC (Health & Human Services Commission), its designee, or another state agency.",
+            "The member's eligibility is determined retroactively and the provider is not notified of retroactive coverage.",
+            "Claims for clients who receive retroactive eligibility must be submitted within 95 days of the date that the client’s eligibility was added to the TMHP eligibility file (add date) and within 365 days of the DOS.",
+            "Retroactive New Benefit: Submission of claims occurred within the 365-day filing deadline (when services are authorized retroactively), but the claim was not filed within 95 days from the date of service because the service was determined to be a benefit of the Medicaid program, and a retroactive effective date for the new benefit was applied."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "Appeals: Appeals must be received within 120 days of the date on the remittance advise.",
+            "If the 120th day falls on a weekend or a holiday, the filing deadline is extended to the next business day following the weekend or holiday.",
+            "Additional Information: For claims re-submitted with additional details, the additional details are subject to the 95-day filing deadline.",
+            "UTMB has 180 days to submit an appeal from last disposition."
+        ],
+        "tpl_cob_claims": [
+            "95 days from the date on the primary EOB, but no more than 365 days from DOS",
+            "If a claim is filed with another plan within the 95 day TFL, Molina must accept the claim if submitted with proof of timely filing from the other plan.",
+            "When the service is billed to a third party (member’s primary insurance) and no response received, providers must allow 110 days to elapse before submitting the claim to Molina. 365-day TFL must still be met.",
+            "Non-third Parties: Claims that are filed with a non-third party first, must be received by Molina within 95 days of the claim disposition by the non-third party.",
+            "Non-third parties include Texas Rehabilitation Commission and the Children with Special Health Care Needs (CSHCN) Services Program."
+        ],
+        "corrected_claims": [
+            "120 days from EOB/Remit Advice for providers within TX.",
+            "365 days from DOS for out-of-state providers.",
+            "365 days from DOS for Nursing Facility Claims."
+        ],
+        "nursing_facility_claims": [
+            "Texas Nursing Facility claims have 1 year for both PAR and NON PAR providers to submit claims.",
+            "Molina is always required to process adjustments for nursing facility claims based on changes to SAS data received from HHSC."
+        ]
+    },
+    "Utah": {
+        "standard_filing_time": {
+            "contracted_provider": "365 days from DOS",
+            "non_contracted_provider": "365 Days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Health plan decision to make an exception due to unusual circumstances.",
+            "▪ Provider has a court order or hearing decision which caused the claim to be submitted after the billing deadline."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "▪ Proof of Timely Filing must be submitted within 365 days from the DOS."
+        ],
+        "tpl_cob_claims": [
+            "COB: ▪ 12 months from the date the claim was processed, denied, or retracted by the primary carrier (i.e. the date of the primary carrier's EOB).",
+            "Note: If a claim is timely, but the related EOB or needed documentation arrives after the timely filing limit has expired, refer the claim to a Supervisor or Manager for review and process as instructed."
+        ],
+        "corrected_claims": [
+            "▪ 365 days from DOS"
+        ]
+    },
+    "Virginia": {
+        "appeals": "Appeals must be submitted 60 days from the processed date of the adverse benefit determination of the claim.",
+        "standard_filing_time": {
+            "participating_provider": "Within 180 calendar days of the date of service unless otherwise agreed upon in the participating provider agreement.",
+            "non_participating_provider": "Within 365 calendar days of the date of service"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "▪ Retro-eligibility - When a member becomes eligible for Medicaid after the date of service, but their coverage is backdated to include the date of service, the time frame for timely filing begins on the date Molina receives notification from the enrollment broker of the member's enrollment.",
+            "• Good cause - Molina will consider exceptions on a case-by-case basis for other causes of filing delays, such as incorrect information provided by official sources",
+            "• For nursing facilities, timely filing is waived."
+        ],
+        "time_limit_for_submitting_additional_info": "180 calendar days of the original claim paid or denied date to be considered for reprocessing.",
+        "tpl_cob_claims": [
+            "The primary insurance Explanation of Payment (EOP) or Medicare Summary Notice (MSN) is used to determine timely filing. The time frame begins with the printdate on the primary insurance EOP or MSN."
+        ],
+        "corrected_claims": [
+            "180 calendar days of the original claim paid date to be considered for reprocessing."
+        ]
+    },
+    "Washington": {
+        "standard_filing_time": {
+            "contracted_provider": [
+                "The 'standard' is 180 days from DOS.",
+                "However, some providers have different limits in the contract.",
+                "The system is configured to fire edit 311 appropriately based on the timely filing provisions in the provider's contract."
+            ],
+            "non_contracted_provider": "365 days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "Exceptions may be made to the timely filing policy in the following circumstances:",
+            "Antepartum Care: 365 days from DOS.",
+            "Private Duty Nursing Providers must submit an initial claim within 365 days of the following events: Date of Service, Date of a final hearing decision, Date a court orders MAA to cover the services, Date DSHS certifies a client’s eligibility, If the provider bills MAA because of recouping of payment.",
+            "Initial claims submitted after the 180/365 calendar day for par providers or 365-day filing period for non-participating providers must have timely filing documentation attached.",
+            "Retroactive Eligibility: An exception may be granted beyond the 365 day time limit for initial claims when billing delays are caused by DSHS (Department of Social & Health Services) retroactive eligibility for up to a 2 year period.",
+            "Claims must be submitted within 180 calendar days (participating providers) or 365 days (non-participating providers) from the date the provider was notified of the final determination by the other payer. The provider must submit proof that they have been billing the member or another health plan in the interim."
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "Providers may resubmit, modify, or adjust any timely initial claim, for a period of 24 months from the adjudication date."
+        ],
+        "tpl_cob_claims": [
+            "180 calendar days (participating providers) or 365 days (non-participating providers & participating providers who have 365 calendar days for their initial timely filing limit) from the date on the primary payer's EOB for initial submissions."
+        ],
+        "adjustments": [
+            "24 months from the paid date.",
+            "30 months from the paid date for COB claims."
+        ],
+        "corrected_claims": [
+            "Providers may resubmit, modify, or adjust any timely initial claim, for a period of 24 months from the paid date."
+        ],
+        "provider_specific_timely_filing_limits": {
+            "Children's University Medical Group": "Configured 365 days for Medicaid only, not BHP",
+            "Franciscan Inpatient Services": "Configured 365 days all LOB",
+            "MMG or Multicare Medical Group Pay To’s": "Configured 365 days all LOB",
+            "Peace Health Medical Group": "Configured 365 days all LOB",
+            "Seattle Children's HM Care": "Configured 365 days all LOB",
+            "Swedish Physicians & All Groups with word 'Swedish'": "Configured 365 days all LOB",
+            "University of Washington Physicians": "Configured 365 days for Medicaid only, not BHP",
+            "Wenatchee Valley Medical Center (WVMC)": "Configured 365 days all LOB"
+        },
+        "non_standard_claim_submission_par_providers": [
+            {
+                "contract_description": "FFS - Island Hosp ProfMH 365 P",
+                "paytofedtax": "910729255",
+                "business": "ANACORTES FAMILY MEDICINE"
+            },
+            {
+                "contract_description": "FFS - Island Hosp ProfMH 365 P",
+                "paytofedtax": "910729255",
+                "business": "ANACORTES TEEN CLINIC"
+            },
+            {
+                "contract_description": "FFS - 110% DSHS - P - 365 Days",
+                "paytofedtax": "562392010",
+                "business": "CASCADE VALLEY HOSPITAL PHYSICIANS"
+            },
+            {
+                "contract_description": "FFS - 110% DSHS - P - 365 Days",
+                "paytofedtax": "562392010",
+                "business": "CASCADE VALLEY HOSPITAL"
+            }
+        ]
+    },
+    "Wisconsin": {
+        "standard_filing_time": {
+            "contracted_provider": "180 days from DOS, unless contractually greater",
+            "non_contracted_provider": "365 Days from DOS"
+        },
+        "exceptions_to_timely_filing_limits": [
+            "The following providers have exceptions to the Standard Filing Time:",
+            "Affinity/Ministry: ▪ 365 day timely filing",
+            "Aurora: ▪ 365 day timely filing"
+        ],
+        "time_limit_for_submitting_additional_info_on_denied_claim": [
+            "▪ If the initial claim was denied for lack of timely filing, providers need to submit an appeal within their appeal timely filing period with acceptable proof that the initial 'clean claim' was submitted within their timely filing period.",
+            "▪ If the initial claim was denied for another reason, the provider must resubmit the claim within the timely filing limits established for initial claim submissions."
+        ],
+        "tpl_cob_claims": [
+            "• Timely filing for participating providers is 60 days from the date of the remit from the primary payer, with the exception of the following providers:",
+            "  - Baycare Clinic: 90 days",
+            "  - Door County Medical Center/Door County Memorial Hospital: 90 days",
+            "  - Froedtert Health: 120 days",
+            "  - Holy Family Memorial: 90 days",
+            "  - Marshfield Health System: 180 days",
+            "  - Medical College of WI: 120 days",
+            "  - Milwaukee Health Services, Inc: 90 days",
+            "  - Sixteenth Street Community Health Center: 90 days",
+            "  - Watertown Regional Medical Center: 120 days",
+            "Medicare Cross Over Claims:",
+            "▪ For Medicare claims crossing over to Medicaid, the timely filing limit is the greater of 36 months from the date of service or 12 months from Medicare’s adjudication date, whichever is later.",
+            "TPL:",
+            "▪ Claims for recipients who have Medicare or other insurance must be submitted to a third party payer prior to sending the claim to Medicaid.",
+            "▪ Claims for recipients who have third party insurance, other than Medicare, must be received by Medicaid or the Medicaid fiscal agent no later than 12 months from the date of service or six months from the date of third party insurance payment or denial.",
+            "Adjustments:",
+            "• Use the date of the EOB submitted with the original claim."
+        ],
+        "corrected_claims": [
+            "• Contracted Providers: A clean claim must be submitted within the provider's timely filing period.",
+            "• Non-contracted Providers: A clean claim must be submitted within the provider's timely filing period."
+        ]
+    }
+}

@@ -1,0 +1,211 @@
+{
+    "Subject": "Single Case Agreement (SCA)/Letters of Agreement (LOA)",
+    "Product": {
+        "Marketplace": false,
+        "Medicaid": true,
+        "Medicare": false,
+        "MMP/MMCP": true
+    },
+    "State": {
+        "ALL": false,
+        "AZ": false,
+        "CA": false,
+        "FL": false,
+        "ID": false,
+        "IL": false,
+        "IA": false,
+        "KY": true,
+        "MA": false,
+        "MI": false,
+        "MS": false,
+        "NE": false,
+        "NV": false,
+        "NM": false,
+        "NY": false,
+        "OH": false,
+        "PR": false,
+        "SC": false,
+        "TX": false,
+        "UT": false,
+        "VA": false,
+        "WA": false,
+        "WI": false
+    },
+    "Line(s) of Business": "All",
+    "Document Owner": "John (Jay) Belew",
+    "Created By": "Lynne Edwards",
+    "Created Date": "11/08/21",
+    "Revised By": "Lynne Edwards",
+    "Approved Date": "01/30/23",
+    "Approved By": "QDC Review Committee",
+    "Approved Via": "QDC Flow Approval",
+    "Approver Title": null,
+    "IQR Reviewer": "Kenya Thompson",
+    "IQR Date": "06/17/24",
+    "Overview": {
+        "Quick Summary": "This job aid documents guidelines for accurately and consistently processing claims with Single Case Agreements (SCA)/Letters of Agreement (LOA) in place. Claims personnel will follow the processes outlined in this document to accurately identify and adjudicate claims with Single Case Agreements (SCA)/Letters of Agreement (LOA) in place based on regulatory and health plan requirements, applicable contract or state rates, system configuration, and established Molina Claims Department guidelines."
+    },
+    "Contents": [
+        "Overview",
+        "Quick Summary",
+        "Contents",
+        "Definitions",
+        "Authorization",
+        "Processing Instructions",
+        "Identifying Single Case Agreements (SCA)/Letters of Agreement (LOA)",
+        "Edit 203",
+        "Manually Pricing SCA/LOA Claims",
+        "Revision Summary"
+    ],
+    "Definitions": {
+        "Letter of Agreement (LOA)": "A special agreement signed by a Molina representative as well as a representative of the provider of health care service, entered into on a per-case basis, outlining terms and agreements relative to reimbursement on a particular claim. Sometimes also known as a Memo of Understanding (MOU) or a Letter of Understanding.",
+        "Single Case Agreement (SCA)": "A negotiated contract between Molina and a provider (typically an out-of-network provider) to provide reimbursement for services rendered to a member, treated on a case-by-case scenario."
+    },
+    "Authorization": {
+        "Note": "Frequently updated reference documents may not provide a link.",
+        "Links": [
+            "Authorization Business Process - All States and LOBs - SOP",
+            "Authorization Business Matrix - All States and LOBs - Reference"
+        ]
+    },
+    "title": "Processing Instructions",
+    "sections": [
+        {
+            "heading": "Identifying Single Case Agreements (SCA)/Letters of Agreement (LOA)",
+            "content": "The Single Case Agreement (SCA) or LOA may be attached to the claim form or entered as a note on the authorization.",
+            "examples": [
+                {
+                    "description": "Example of SCA attached to the claim form",
+                    "image": "example_sca_claim_form.png"
+                },
+                {
+                    "description": "Example of SCA entered as an authorization note",
+                    "image": "example_sca_authorization_note.png"
+                }
+            ]
+        },
+        {
+            "heading": "Edit 203",
+            "content": "Edit 203, \u201cthis drug/service/supply is not included in the fee schedule or contracted/legislated fee agreement,\u201d may fire on a claim/service for denial.",
+            "instructions": "Check for SCA/LOA on these claims and follow the steps below:",
+            "table": {
+                "headers": [
+                    "If...",
+                    "Then..."
+                ],
+                "rows": [
+                    {
+                        "if": "there SCA/LOA is attached to the claim/service or authorization form,",
+                        "then": "override the edit and manually price the claim/service according to the SCA/LOA."
+                    },
+                    {
+                        "if": "there SCA/LOA is not attached to the claim/service or authorization form,",
+                        "then": "allow the claim/service to deny."
+                    }
+                ]
+            }
+        }
+    ],
+    "footer": {
+        "heading": "Manually Pricing SCA/LOA Claims",
+        "page": "Page 2 of 3",
+        "link": "Return to table of contents"
+    },
+    "instructions": {
+        "steps": [
+            "Click the Pay tab in the core claims processing system.",
+            "Click Manual Contract Price Override.",
+            "Enter the payment amount found on the SCA/LOA into the Paid column.",
+            "Adjudicate and finalize the claim."
+        ]
+    },
+    "image_description": {
+        "table_headers": [
+            "Providers",
+            "COB",
+            "Service",
+            "Edits",
+            "Pay",
+            "Limits",
+            "Memos",
+            "Attributes",
+            "Edit History"
+        ],
+        "table_columns": [
+            "Line #",
+            "Status",
+            "CPT/HCPCS",
+            "NDC/Product Code",
+            "Mod",
+            "Charged",
+            "Billed Units",
+            "Units",
+            "Billed Tax Amt",
+            "Disallow",
+            "Initial Contract Allow"
+        ],
+        "table_data": [
+            {
+                "Line #": 1,
+                "Status": "OPN",
+                "CPT/HCPCS": "0213T",
+                "NDC/Product Code": "CS",
+                "Mod": null,
+                "Charged": "$207.00",
+                "Billed Units": 1,
+                "Units": null,
+                "Billed Tax Amt": null,
+                "Disallow": "$0.00",
+                "Initial Contract Allow": null
+            }
+        ],
+        "manual_pricing_mode": "Manual Contract Price Override",
+        "claim_totals": {
+            "Claim Total": "$418.00",
+            "Total Deductible": "$0.00",
+            "Interest Days": null,
+            "COB Allowed": "$0.00",
+            "Pay Discounts": "$0.00",
+            "COB Paid": "$0.00",
+            "Total Coinsurance": "$0.00",
+            "Adjustment Reason": null,
+            "Reimburse Medicare": "$0.00",
+            "Total Spend-Down": "$0.00",
+            "Submission Document": null,
+            "Cost Share Savings": "Pay(net Withhold)",
+            "FFS Withhold": "$0.00"
+        }
+    },
+    "revision_summary": [
+        {
+            "Request ID": "IQR June 2024",
+            "Posted/Archived Date": "06/17/24",
+            "AR Y/N": "N",
+            "Comments": [
+                "IQR June 2024",
+                "The document went through an internal quality review, and the following was updated:",
+                "- document template",
+                "- ICN conversion to Job Aid",
+                "- updated links.",
+                "Note: The IQR checks formatting and adherence to internal standards and is not a substitute for content review. This document is overdue for Claims review and may be subject to compliance risk for state/federal or business requirements."
+            ]
+        },
+        {
+            "Request ID": "QDC 2022",
+            "Posted/Archived Date": "02/23/23",
+            "AR Y/N": "N",
+            "Comments": [
+                "All reviewers approved, except one. Review notes state PAI.",
+                "The document went through the annual QDC review cycle, but a thorough review was not completed. This is considered a 'missed review' and may be subject for compliance risk to state/federal or business requirements."
+            ]
+        },
+        {
+            "Request ID": "4756",
+            "Posted/Archived Date": "11/21/21",
+            "AR Y/N": "N",
+            "Comments": [
+                "New document."
+            ]
+        }
+    ]
+}

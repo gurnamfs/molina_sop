@@ -1,0 +1,212 @@
+{
+    "subject": "Workflow Routing Instructions",
+    "product": [
+        "Marketplace",
+        "Medicaid",
+        "Medicare",
+        "MMP/MMCP"
+    ],
+    "state": [
+        "ALL",
+        "AZ",
+        "CA",
+        "FL",
+        "ID",
+        "IL",
+        "KY",
+        "MI",
+        "MS",
+        "NM",
+        "NV",
+        "NY",
+        "OH",
+        "PR",
+        "SC",
+        "TX",
+        "UT",
+        "WA",
+        "WI"
+    ],
+    "lines_of_business": "All",
+    "document_owner": [
+        "Irene Armendariz",
+        "John Belew",
+        "Cynthia Davila",
+        "Yvette Smart",
+        "Nancy Vasquez",
+        "Frank Vernaza"
+    ],
+    "created_by": "Bridgett Patterson-Felder",
+    "created_date": "10/05/10",
+    "revised_by": "Deirdre Wiley",
+    "approved_date": "04/11/22",
+    "approved_by": "Nilda Arias",
+    "approved_via": "Document Intake Site",
+    "approver_title": "MHI - Dir, Claims",
+    "overview": {
+        "purpose": "The purpose of this document is to provide specific routing instructions for claims with edits related to Configuration Information Management (CIM), Provider Configuration Management (PCM), or Utilization Management (UM).",
+        "expected_outcome": "When needed, claims personnel will route claims to the correct departments to ensure prompt edit resolution."
+    },
+    "Contents": {
+        "Overview": 1,
+        "Purpose": 1,
+        "Expected Outcome": 1,
+        "Contents": 2,
+        "Definitions": 2,
+        "Routing Instructions": 4,
+        "CIM-Related Edits": 4,
+        "PCM-Related Edits": 5,
+        "UM-Related Edits": 6,
+        "Revision Summary": 7
+    },
+    "Definitions": [
+        {
+            "Term": "POS",
+            "Definition": "Point of Service"
+        },
+        {
+            "Term": "Utilization Management (Utilization Review), UM, UR",
+            "Definition": "A function, process and department within each Molina health plan that deals with preadmission and concurrent review of hospitalizations, certain surgeries and certain medical treatments. Typical aspects of Utilization Management include:\n- Collection of data about diagnosis, required services, diagnostic test results, and symptoms\n- Communication to providers and members of review outcome\n- Comparison of medical information to medical necessity criteria\n- Physician determination of medical necessity\n- Referral of case to physician review if criteria are not met\n- Review of criteria that describe the member's conditions or services to support the care request"
+        },
+        {
+            "Term": "Workflow",
+            "Definition": "A claims management software that interfaces with QNXT and allows Claims Examiners and other users to route a claim to a specific queue as needed, such as UMT, Medical Claims Review (MCR), PCM (Provider Configuration Management), and other functional areas that are adjunctive parts of the total claims processing cycle."
+        }
+    ],
+    "References": [
+        {
+            "Document": "Authorization Business Process - All States and LOBs - SOP"
+        }
+    ],
+    "CIM_Related_Edits": [
+        {
+            "Edit#": 197,
+            "Description": "Procedure code on claim not valid for benefit"
+        },
+        {
+            "Edit#": 258,
+            "Description": "Emergency claim does not match emergency benefit"
+        },
+        {
+            "Edit#": 271,
+            "Description": "Benefit Restriction Group validation failed"
+        },
+        {
+            "Edit#": 293,
+            "Description": "Default FFS Percent Not Defined"
+        },
+        {
+            "Edit#": 330,
+            "Description": "Invalid diagnosis code for benefit"
+        },
+        {
+            "Edit#": 376,
+            "Description": "Contract Term Restriction Group validation failed"
+        }
+    ],
+    "PCM_Related_Edits": [
+        {
+            "Edit#": 101,
+            "Description": "No active provider contract"
+        },
+        {
+            "Edit#": 102,
+            "Description": "Provider not active for plan on DOS"
+        },
+        {
+            "Edit#": 111,
+            "Description": "[MS and TX only] Provider Watch (an alert on provider record indicating a sanctioned provider)"
+        }
+    ],
+    "UM-Related Edits": [
+        {
+            "Edit#": 128,
+            "Description": "Remaining visits less than date span. Units not allocated"
+        },
+        {
+            "Edit#": 206,
+            "Description": "Benefit visit limit exceeded"
+        },
+        {
+            "Edit#": 601,
+            "Description": "Prior Authorization is closed"
+        },
+        {
+            "Edit#": 602,
+            "Description": "Prior Authorization is awaiting medical review"
+        },
+        {
+            "Edit#": 603,
+            "Description": "Prior Authorization is pended"
+        },
+        {
+            "Edit#": 609,
+            "Description": "Prior Authorization dates do not match claim"
+        },
+        {
+            "Edit#": 610,
+            "Description": "Prior Authorization services do not match claim"
+        },
+        {
+            "Edit#": 611,
+            "Description": "Prior Authorization has no available units"
+        },
+        {
+            "Edit#": 612,
+            "Description": "Prior Authorization has insufficient units remaining"
+        },
+        {
+            "Edit#": 613,
+            "Description": "Claim requires manual processing"
+        },
+        {
+            "Edit#": 614,
+            "Description": "No available bed days on authorization"
+        },
+        {
+            "Edit#": 625,
+            "Description": "Authorization line manually pended"
+        }
+    ],
+    "Instructions": "If the edit remains, refer to the Authorization Business Process - All States and LOBs - SOP. If the edit is not addressed in that document, route the claim to UM.",
+    "RevisionSummary": [
+        {
+            "RequestID": 4961,
+            "PostedArchivedDate": "04/14/22",
+            "QDC_YN": "N",
+            "Comments": "In \u201cUM-Related Edits\u201d section, added instruction to first refer to the Authorization Business Process SOP before routing the claim to UM. Added \u201cReferences\u201d section."
+        },
+        {
+            "RequestID": 4782,
+            "PostedArchivedDate": "12/07/21",
+            "QDC_YN": "N",
+            "Comments": "Modified table in \u201cDefinitions\u201d section. Added Note, table, and Edit #asterisks in \u201cCIM-Related Edits\u201d."
+        },
+        {
+            "RequestID": 4318,
+            "PostedArchivedDate": "04/09/21",
+            "QDC_YN": "N",
+            "Comments": "Removed duplicate bullet points in CIM definition."
+        }
+    ],
+    "IndividualStatePostedArchivedDates": {
+        "AZ": null,
+        "CA": null,
+        "FL": null,
+        "ID": null,
+        "IL": null,
+        "KY": null,
+        "MI": null,
+        "MS": null,
+        "NM": null,
+        "NV": null,
+        "NY": null,
+        "OH": null,
+        "PR": null,
+        "SC": null,
+        "TX": null,
+        "UT": null,
+        "WA": "12/07/21",
+        "WI": null
+    }
+}
