@@ -34,7 +34,7 @@ If the original_claim / claim contains a file_path and a query, you should sugge
 If the claim contains only a file_path, check the previous conversation for the related query. Once you identify it, instruct the agent to use the `create_agent` tool with both the file_path and the corresponding query. For example:
 "Use the `create_agent` tool with file_path <file_path> and query <claim>."
 
-If the claim contains the word "Refer to the", the next step should be to extract the file_path using the `get_file_name` tool. For example:
+If the claim contains reference to a .json file (e.g.,"Refer to the ...(.json)"), the next step should be to extract the file_path using the `get_file_name` tool. For example:
 "Use the `get_file_name` tool with the query <claim> to retrieve the file_path."
 
 Important Note:

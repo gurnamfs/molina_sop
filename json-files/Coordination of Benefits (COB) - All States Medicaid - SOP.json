@@ -11,7 +11,7 @@
     "Processing Claims when External Enrollment is Secondary and EOB is Submitted and Edit Number is Present": [
         "If Molina is Paying the difference - No Authorization is required",
         "If primary payer denied the claim - Deny the claim for lack of authorization and route it to UMT for review",
-        "If the primary payer did not provide an EOB - Confirm the COB segment and external enrollment status. Refer to the `Authorization Business Process - All States and LOBs - SOP` to Verify if an authorization is required."
+        "If the primary payer did not provide an EOB - Confirm the COB segment and external enrollment status. Refer to the Authorization Business Process - All States and LOBs - SOP.json to Verify if an authorization is required."
     ],
     "Processing Claims when External Enrollment is Secondary and EOB is Submitted and Edit Number is not Present": {
         "COB_Payment_Calculation_Methods_Calculations": [
@@ -76,9 +76,9 @@
         "5. Use appropriate remit codes for every denial scenario."
     ],
     "References": [
-        "Authorization Business Process SOP – All States",
-        "Reading and Interpreting EOBs SOP",
-        "Workflow Routing Instructions – All States Medicaid",
-        "Timely Filing Requirements by State Job Aid"
+        "Authorization Business Process - All States and LOBs - SOP.json",
+        "Reading and Interpreting EOBs from Other Payers - All States - SOP.json",
+        "Workflow Routing Instructions - All States Medicaid - Job Aid.json",
+        "Timely Filing Requirements by State Job Aid.json"
     ]
 }
