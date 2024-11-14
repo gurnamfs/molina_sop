@@ -19,7 +19,7 @@ prefix = """You are an agent designed to interact with JSON.
  up by using the `json_spec_list_keys` tool to see what keys exist at that path.
  Do not simply refer the user to the JSON or a section of the JSON, as 
  this is not a valid answer. Keep digging until you find the answer and explicitly return it."""
- 
+
 
 suffix = """Begin!"\n\nQuestion: {input}\nThought: I should look at the keys that exist \
 in data to see what I have access to\n{agent_scratchpad}"""

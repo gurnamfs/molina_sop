@@ -8,7 +8,7 @@ import re
 from contextlib import redirect_stdout
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from functions import initial_checks
+from functions import initial_checks, final
 from tool_func import langgraph_agent_executor
 from prompts import sys
 from tool_func import messages
@@ -48,7 +48,8 @@ async def sop_execution(
         cleaned_text = re.sub(
             r"\u001b\[\d+;\d+m|\u001b\[0m|\u001b\[1m>", "", verbose_output
         )
-        return cleaned_text
+        res = final(processed_claim)["output"]
+        return cleaned_text + f"\n\nFinal Answer: {res}"
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

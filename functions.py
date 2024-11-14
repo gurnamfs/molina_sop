@@ -5,8 +5,6 @@ from langchain_community.tools.json.tool import JsonSpec
 from prompts import prefix, suffix, return_system_prompt
 
 
-
-
 llm = AzureChatOpenAI(
     azure_endpoint="https://firstsenseai.openai.azure.com",
     azure_deployment="gpt-4o",
@@ -18,10 +16,12 @@ llm = AzureChatOpenAI(
 
 
 def return_system(claim):
-    system = return_system_prompt + f"""`Claim`: {claim}
+    system = (
+        return_system_prompt
+        + f"""`Claim`: {claim}
     """
-    
-    
+    )
+
     return system
 
 
@@ -37,11 +37,10 @@ def initial_checks(claim):
         str: The processed claim to be passed on to the create_agent tool.
     """
     print("Initial Check Agent")
-    
 
     res = llm.invoke(return_system(claim)).content
 
-    # return res + f"\n{claim}" 
+    # return res + f"\n{claim}"
     return res
 
 
@@ -64,14 +63,15 @@ def final(claim):
 
     json_agent_executor = create_json_agent(
         handle_parsing_errors=True,
-        prefix=prefix, 
-        suffix=suffix, 
-        llm=llm, 
-        toolkit=json_toolkit, 
-        verbose=True
-        
+        prefix=prefix,
+        suffix=suffix,
+        llm=llm,
+        toolkit=json_toolkit,
+        verbose=True,
     )
 
-    response = json_agent_executor.invoke("Process the state mentioned for timely filing of claims: " + claim)
+    response = json_agent_executor.invoke(
+        "Process the state mentioned for timely filing of claims: " + claim
+    )
 
     return response
