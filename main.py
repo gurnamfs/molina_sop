@@ -13,6 +13,11 @@ from tool_func import langgraph_agent_executor
 from prompts import sys
 from tool_func import messages
 
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+LANGCHAIN_API_KEY="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"
+LANGCHAIN_PROJECT="molina-sop"
+
 
 app = FastAPI()
 

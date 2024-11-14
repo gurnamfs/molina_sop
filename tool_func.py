@@ -28,34 +28,55 @@ def create_agent(file_path: str, query: str) -> str:
              This may include relevant information or references from the document.
     """
     print("#####CREATE AGENT TOOL#####")
-    print(f"File Name: {file_path}, Claim: {query}")
+    try:
+        
+        print(f"File Name: {file_path}, Claim: {query}")
+        # Read the YAML file
+        with open(file_path, "r", encoding="utf-8") as f:
+            try:
+                data = yaml.load(f, Loader=yaml.FullLoader)
+            except yaml.YAMLError as e:
+                return f"Error loading YAML file: {e}"
 
-    with open(file_path, "r", encoding="utf-8") as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
-    json_spec = JsonSpec(dict_=data, max_value_length=4000)
-    json_toolkit = JsonToolkit(spec=json_spec)
+        # Proceed with JSON spec and toolkit creation
+        json_spec = JsonSpec(dict_=data, max_value_length=4000)
+        json_toolkit = JsonToolkit(spec=json_spec)
 
-    json_agent_executor = create_json_agent(
-        handle_parsing_errors=True,
-        prefix=prefix,
-        suffix=suffix,
-        llm=llm,
-        toolkit=json_toolkit,
-        verbose=True,
-    )
+        try:
+            # Create JSON agent executor
+            json_agent_executor = create_json_agent(
+                handle_parsing_errors=True,
+                prefix=prefix,
+                suffix=suffix,
+                llm=llm,
+                toolkit=json_toolkit,
+                verbose=True,
+            )
+        except Exception as e:
+            return f"Error creating JSON agent: {e}"
 
-    response = json_agent_executor.invoke(
-        query
-        + "\n\nNote: Return the final answer in a readable format without adding any information."
-    )
+        try:
+            # Invoke the agent with the query
+            response = json_agent_executor.invoke(
+                query + "\n\nNote: Return the final answer in a readable format without adding any information."
+            )
+        except Exception as e:
+            return f"Error invoking JSON agent: {e}"
 
-    return response
+        return response
+
+    except FileNotFoundError:
+        return f"Error: The file at {file_path} was not found."
+    except PermissionError:
+        return f"Error: Permission denied to read the file at {file_path}."
+    except Exception as e:
+        return f"An unexpected error occurred: {e}"
 
 
 @tool
 def get_file_path(query: str) -> str:
     """
-    Use this function when "Refer to the..." in the Answer."
+    Use this function when "Refer to the ...(.json)" in the Answer."
 
     Args:
         query (str): Answer that contains a reference to a document.
@@ -65,17 +86,46 @@ def get_file_path(query: str) -> str:
     """
     print("###GET FILE NAME TOOL###")
     directory_path = "json-files"
-    json_files = [
-        file
-        for root, dirs, files in os.walk(directory_path)
-        for file in files
-        if file.endswith((".json"))
-    ]
 
-    normalized_text = query.lower()
+    try:
+        # Check if the directory exists
+        if not os.path.isdir(directory_path):
+            raise FileNotFoundError(f"The directory '{directory_path}' was not found.")
 
-    return f"json-files/{difflib.get_close_matches(normalized_text, json_files, n=1, cutoff=0.0)[0]}"
+        # Retrieve all JSON files in the directory
+        json_files = [
+            file
+            for root, dirs, files in os.walk(directory_path)
+            for file in files
+            if file.endswith((".json"))
+        ]
 
+        # Handle case where no JSON files are found
+        if not json_files:
+            raise FileNotFoundError(f"No JSON files found in directory '{directory_path}'.")
+
+        # Normalize the query for case-insensitive matching
+        normalized_text = query.lower()
+
+        # Try to find the closest match to the query
+        match = difflib.get_close_matches(normalized_text, json_files, n=1, cutoff=0.0)
+        
+        if not match:
+            raise ValueError(f"No close match found for '{query}' in the JSON files.")
+
+        # Return the file path of the matched file
+        return f"json-files/{match[0]}"
+
+    except FileNotFoundError as fnf_error:
+        print(f"Error: {fnf_error}")
+        return ""
+    except ValueError as value_error:
+        print(f"Error: {value_error}")
+        return ""
+    except Exception as e:
+        # Catch any other unexpected exceptions
+        print(f"Unexpected error: {e}")
+        return ""
 
 messages = []
 
@@ -91,11 +141,19 @@ def guide(query: str) -> str:
     Returns:
         str: An instruction for the next tool usage.
     """
-    print("###Guide Tool###")
-    messages.append(("human", query))
-    ai_message = llm.invoke(messages).content
-    messages.append(("ai", ai_message))
-    return ai_message
+    try:
+        print("###Guide Tool###")
+        messages.append(("human", query))
+        
+        ai_message = llm.invoke(messages).content
+        
+        messages.append(("ai", ai_message))
+        
+        return ai_message
+    
+    except Exception as e:
+        error_message = f"An error occurred in guide tool: {str(e)}"        
+        return error_message
 
 
 tools = [guide, create_agent, get_file_path]
