@@ -1,8 +1,3 @@
-# cd txt/sop_exe/molina-sop-execution-app/
-# source molina/bin/activate
-# uvicorn main:app --host 0.0.0.0 --port 8892
-# http://13.43.78.177:8892
-
 import io
 import re
 from contextlib import redirect_stdout
@@ -13,10 +8,6 @@ from tool_func import langgraph_agent_executor
 from prompts import sys
 from tool_func import messages
 
-LANGCHAIN_TRACING_V2="true"
-LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
-LANGCHAIN_API_KEY="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"
-LANGCHAIN_PROJECT = "molina-sop"
 
 app = FastAPI()
 
