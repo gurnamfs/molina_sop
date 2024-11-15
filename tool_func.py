@@ -8,16 +8,6 @@ from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
 from prompts import prefix, suffix, sys, system_message
 from functions import llm
-from langchain_openai import AzureChatOpenAI
-
-model = AzureChatOpenAI(
-    azure_endpoint="https://firstsenseai.openai.azure.com",
-    azure_deployment="gpt-4o",
-    api_version="2024-02-15-preview",
-    api_key="a823ef8205364125a194795f870da84c",
-    temperature=0,
-    max_tokens=None,
-)
 
 
 @tool
@@ -60,7 +50,6 @@ def create_agent(file_path: str, query: str) -> str:
     )
 
     return response
-
 
 
 @tool
@@ -111,4 +100,4 @@ def guide(query: str) -> str:
 
 tools = [guide, create_agent, get_file_path]
 
-langgraph_agent_executor = create_react_agent(model, tools, state_modifier=system_message)
+langgraph_agent_executor = create_react_agent(llm, tools, state_modifier=system_message)

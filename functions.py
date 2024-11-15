@@ -40,7 +40,7 @@ def initial_checks(claim):
 
     res = llm.invoke(return_system(claim)).content
 
-
+    # return res + f"\n{claim}"
     return res
 
 
