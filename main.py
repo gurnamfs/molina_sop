@@ -30,6 +30,7 @@ app.add_middleware(
 )
 
 
+
 @app.post("/sop_execution/")
 async def sop_execution(
     query, file_path="Coordination of Benefits (COB) - All States Medicaid - SOP.json"
