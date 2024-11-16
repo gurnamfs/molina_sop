@@ -81,6 +81,8 @@ Provide only the answer, without any explanation.
 Sample Output:
 "<State>, External Enrollment Secondary, EOB Submitted, Edit Number Present Place of Service (POS) <Number>"
 
+Note: If the Edit Number is not present, do not mention it in the answer.
+
 """
 
 system_message = """You are an agent designed to extract relevant information from documents based on queries. Your goal is to analyze the data and return the most pertinent information related to the query. 

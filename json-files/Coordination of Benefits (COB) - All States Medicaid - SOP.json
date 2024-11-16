@@ -13,7 +13,7 @@
         "If primary payer denied the claim - Deny the claim for lack of authorization and route it to UMT for review",
         "If the primary payer did not provide an EOB - Confirm the COB segment and external enrollment status. Refer to the Authorization Business Process - All States and LOBs - SOP.json to Verify if an authorization is required."
     ],
-    "Processing Claims when External Enrollment is Secondary and EOB is Submitted and Edit Number is not Present": {
+    "Processing Claims when External Enrollment is Secondary and EOB is Submitted": {
         "COB_Payment_Calculation_Methods_Calculations": [
             "1. Adjudicate the claim on the Pay tab in the Claims module to determine Molina’s regular allowable, manually pricing, as necessary. Based on system configuration, the core claims processing system will calculate the appropriate final reimbursement amount(s).",
             "2. Review how the COB payment information is applied on the claim (Method 2, 3, 9 or 10). Click on the Edits tab and scroll past the Calculate Contract Amounts to the section entitled COB Calculations.",
