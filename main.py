@@ -67,8 +67,8 @@ async def data_streamer(query,file_path):
 
 
 
-@app.post("/sop_execution/")
-async def sop_execution(
+@app.post("/sop_navigation/")
+async def sop_navigation(
     query, file_path="Coordination of Benefits (COB) - All States Medicaid - SOP.json"
 ):
     
