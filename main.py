@@ -5,7 +5,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from functions import initial_checks, final
 # from functions import initial_checks
-from tool_func import langgraph_agent_executor
+from tool_func import langgraph_agent_executor, guide_tool
 from prompts import sys
 # from tool_func import messages
 import logging
