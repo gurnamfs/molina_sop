@@ -3,7 +3,8 @@
         "UM Umbrella Authorizations": [
             "Utilization Management (UM) will create one “umbrella” auth per member to house the total number of approved Private Duty Nursing (PDN) hours for members receiving services from multiple independent nurses.",
             "The umbrella auth will be created under Temporary Provider, and will include the following in the non-clinical notes: *Name of each nurse and * Service Contract Act (SCA) rates for each nurse"
-        ]
+        ],
+        "Place of Service (POS) 21, 22, 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json to extract the information from the relevant POS mentioned."
     },
     "Claim Form": "Claims for Private Duty Nursing services are submitted on the Centers for Medicare and Medicaid Services form (CMS-1500) and Uniform Billing form (UB-04).",
     "Identifying Services for CMS-1500": {

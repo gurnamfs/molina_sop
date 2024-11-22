@@ -5,6 +5,9 @@ from langchain_community.agent_toolkits import JsonToolkit, create_json_agent
 from langchain_community.tools.json.tool import JsonSpec
 from prompts import prefix, suffix, return_system_prompt
 from dotenv import load_dotenv
+from langchain_core.output_parsers import JsonOutputParser
+from langchain_core.prompts import PromptTemplate
+from pydantic import BaseModel, Field
 import logging
 
 logging.basicConfig(
@@ -22,6 +25,7 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
 
+
 llm = AzureChatOpenAI(
     azure_endpoint="https://firstsenseai.openai.azure.com",
     azure_deployment="gpt-4o",
@@ -30,6 +34,21 @@ llm = AzureChatOpenAI(
     temperature=0,
     max_tokens=None,
 )
+
+class Format(BaseModel):
+    file_path: str = Field(description="file_path in the text")
+    query: str = Field(description="Exact process step to perform on the .json")
+
+parser = JsonOutputParser(pydantic_object=Format)
+
+prompt = PromptTemplate(
+    template="Format the given text.\n{format_instructions}\n{text}\n",
+    input_variables=["text"],
+    partial_variables={"format_instructions": parser.get_format_instructions()},
+)
+
+chain = prompt | llm | parser
+
 
 
 def initial_checks(claim):
@@ -85,7 +104,7 @@ def final(claim):
         )
 
         response = json_agent_executor.invoke(
-            "Process the state mentioned for timely filing of claims: " + claim
+            "Extract information only from the relevant section for the specified state to ensure timely filing: " + claim
         )
         logging.info(f"Received Timely Filing response")
 

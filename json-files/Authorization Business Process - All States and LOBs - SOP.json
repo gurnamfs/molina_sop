@@ -1,96 +1,105 @@
 {
-    "Authorization Requirements": {
-        "Assumption": [
-            "If a billing provider name does not match the name on the authorization but the Tax Identification Number (TIN) or Practice Group is the same, the authorization will be accepted, and the claim will be processed accordingly.",
-            "Note: Examiners should reference the 'Referred Pay-To Affiliate' field in the Authorization module to determine which provider has been authorized for rendering services.",
-            "When a claim is billed with a DRG and the dates of service (DOS) or number of days do not match, the claim will be routed to UM for review (Exception: For WA NICU claims, pay per DRG).",
-            "Processing guidelines contained in this document pertain to par providers."
-        ],
-        "Effective Date of Service 03/03/22 Florida – BayCare Health System Facilities Require Authorization": {
-            "Florida – BayCare Health Systems Facilities": [
-                "SP DIRECT PAR - BH PROF - BAYCARE 107% HS30 IN1000",
-                "DIRECT PAR - BH PSYCH HOSP - BAYCARE HEALTH",
-                "DIRECT PAR: HOSPITAL: BCHS BAYCARE ALLIANT HOSPITAL",
-                "DIRECT NON-PAR: BCHS DIAGNOSTIC IMAGING",
-                "DIRECT PAR: BCHS AMBULATORY SURGICAL CENTERS 105% FMFS",
-                "DIRECT PAR: BCHS DIAGNOSTIC IMAGING 105%",
-                "DIRECT PAR: BCHS MORTON PLANT REHABILITATION CENTER",
-                "DIRECT PAR: HOSPITAL: BCHS BARTOW REGIONAL",
-                "DIRECT PAR: HOSPITAL: BCHS MEASE COUNTRYSIDE HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS MEASE DUNEDIN HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS MORTON PLANT HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS MORTON PLANT NORTH BAY HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS SOUTH FLORIDA BAPTIST HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS ST ANTHONY'S HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS ST JOSEPH'S HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS ST JOSEPH'S HOSPITAL – NORTH",
-                "DIRECT PAR: HOSPITAL: BCHS ST JOSEPH'S WOMENS HOSPITAL",
-                "DIRECT PAR: HOSPITAL: BCHS WINTER HAVEN HOSPITAL"
-            ]
-        },
-        "Authorization Exclusions for Florida - HH and PH Ambulance Transportation": {
-            "Authorization for non-participating providers is not required for ambulance transportation when billed for hospital-to-hospital (HH) and physician-to-hospital (PH) scenarios.": [
-                {
-                    "If": "the ambulance service codes are billed with modifier HH or PH",
-                    "Then": "override authorization requirement and continue processing the claim."
-                },
-                {
-                    "If": "the ambulance service codes are not billed with modifier HH or PH",
-                    "Then": "override authorization requirement and continue processing the claim."
-                }
-            ]
-        },
-        "Authorization Exclusion for Kentucky: Par and Non-Par Emergent/Urgent Services": {
-            "Authorization for participating and non-participating providers is not required for emergent/urgent services.": {
-                "Emergent/Urgent services are identified by the following": {
-                    "Claim Type UB-04": "Identifiers - Bill Type 13X or 85X, Revenue code 045X, or admit type 1, Admit type 2",
-                    "Claim Type CMS-1500": "Identifiers - Place of Service 20, Place of Service 23"
-                }
+    "Authorization Exclusions for Florida - HH and PH Ambulance Transportation": {
+        "Authorization for non-participating providers is not required for ambulance transportation when billed for hospital-to-hospital (HH) and physician-to-hospital (PH) scenarios.": [
+            {
+                "If": "the ambulance service codes are billed with modifier HH or PH",
+                "Then": "override authorization requirement and continue processing the claim."
+            },
+            {
+                "If": "the ambulance service codes are not billed with modifier HH or PH",
+                "Then": "override authorization requirement and continue processing the claim."
             }
-        },
-        "Authorization Exclusions for Texas": {
-            "The following hospitals/providers are excluded from authorization requirements for all lines of business. Do not deny claims requesting authorization from these sources": {
-                "Memorial Hermann Hospital": [
-                    "According to MHHS agreement, the only time payment can be withheld or denied is for ineligibility, non-covered services, or untimely filing of a claim. Then, SOI cannot be considered as non-covered service because the provider can turn around and bill the patient. So, auth or no auth, the claim should pay for inpatient services or outpatient services requiring prior auth.",
-                    "The claim cannot deny for lack of auth. however, if medical necessity was not met, then in this situation the payment can be reduced. If sepsis criteria are not met, manually price the claim without the sepsis DX.",
-                    "Although this hospital is excluded from the inpatient authorization requirement, the Spell of Illness benefit limitation still applies. To facilitate claims payment, the hospital will often request for prior authorization. To determine if the member has exhausted their Spell of Illness benefit, review authorization notes, claims memos, and/or the member's history.",
-                    "Note: For SOI information, refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json."
-                ],
-                "Dallas County Hospitals": "Outpatient services only"
+        ]
+    },
+    "Authorization Exclusion for Kentucky: Par and Non-Par Emergent/Urgent Services": {
+        "Authorization for participating and non-participating providers is not required for emergent/urgent services.": {
+            "Emergent/Urgent services are identified by the following": {
+                "Claim Type UB-04": "Identifiers - Bill Type 13X or 85X, Revenue code 045X, or admit type 1, Admit type 2",
+                "Claim Type CMS-1500": "Identifiers - Place of Service 20, Place of Service 23"
             },
-            "Place of Service POS 21, 22 or 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
-            "For Marketplace": "Effective on and after 11/30/2022, UT Southwestern is no longer exempt from prior authorization requirements.",
-            "For Medicaid": [
-                "UT Southwestern (Professional claims only)",
-                "Note: UT Southwestern facility claims will require authorization"
-            ]
+            "Authorization Exclusion for Kentucky": "Refer to the "
+        }
+    },
+    "Authorization Exclusions for Texas": {
+        "The following hospitals are excluded from authorization requirements. Do not deny claims requesting authorization from these sources": {
+            "Memorial Hermann Hospital": [
+                "Claims for inpatient or outpatient services should be paid, regardless of authorization status.",
+                "The claim cannot be denied for lack of authorization. However, if medical necessity is not met, payment can be reduced. If sepsis criteria are not met, manually adjust the claim price by removing the sepsis diagnosis.",
+                "Although this hospital is exempt from inpatient authorization requirements, the Spell of Illness benefit limitation still applies. To help with claims payment, the hospital may request prior authorization.",
+                "Refer to the Inpatient Facility Claims Processing Requirements by State – All State Medicaid – Job Aid.json for to check the relevant section for Spell of Illness (SOI)"
+            ],
+            "Dallas County Hospitals": "Outpatient services only"
         },
-        "Determining if Prior Authorization is Required": {
-            "When manually processing claims": {
-                "Guidelines": {
-                    "If auth not required And auth is in system": "Then, do not attach auth to the claim.",
-                    "If auth is required And no auth is in system": "Then refer to business rule for particular scenario in the “Authorization Mismatches” section and process accordingly.",
-                    "If auth is required And auth mismatch is in system": "Then refer to business rule for particular scenario in the “Authorization Mismatches” section and process accordingly.",
-                    "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json"
-                },
-                "Refer to the": "Refer to the Authorization Business Process - All States and LOBs - SOP.json and  Check for any relevant instructions regarding claim payments provided by UM in the non-clinical note section of the authorization in the claims core processing system."
+        "For Marketplace": "Effective on and after 11/30/2022, UT Southwestern is no longer exempt from prior authorization requirements.",
+        "For Medicaid": [
+            "UT Southwestern (Professional claims only) these require authorization"
+        ],
+        "Texas": "Refer to the Inpatient Facility Claims Processing Requirements by State – All State Medicaid – Job Aid.json to check the relevant section for Spell of Illness (SOI)"
+    },
+    "Verify if Authorization is Required": {
+        "When manually processing claims": {
+            "Guidelines": {
+                "If auth not required And auth is in system": "Then, do not attach auth to the claim.",
+                "If auth is required And no auth is in system / If auth is required And auth mismatch is in system": "Then refer to business rule for particular scenario in the “Authorization Mismatches” section and process accordingly.",
+                "Verify Authorization Exclusion": "Refer to Authorization Business Process - All States and LOBs - SOP.json to verify the Authorization Exclusions for the state."
+            }
+        }
+    },
+    "Authorization Mismatches": {
+        "Whenever there is an authorization that is not an exact match to billed services, follow the instructions below": {
+            "Billed level of care is higher than authorized level of care. Example Facility bills with rev code 174 and auth is for rev code 172. Marketplace Note: Code 174: NICU Level IV Code 172: NICU Level II": {
+                "Arizona": "Pay with auth. For no auth, deny using remit 197",
+                "Wishington NICU": "Refer to the Authorization Business Matrix - All States and LOBs.",
+                "Marketplace": {
+                    "Validate the contract to see if NICU Levels II-IV pay the same": {
+                        "If the level of care billed pays the same as the level of care authorized": "Pay the claim as billed",
+                        "If the level of care billed pays more than the one authorized": "Apply LOC reductions. Exception: The states of Florida and Utah are excluded from the inpatient LOC reduction. For all other states pricing at DRG, LOC reduction does not apply."
+                    }
+                }
             },
-            "Note (AZ NICU)": "Authorization is not required for a mother’s claim unless the inpatient stay is for more than the following. Check AHCCCS Maternity Care Services: Forty-eight (48) hours for natural delivery, Ninety-six (96) hours for cesarean section"
-        },
-        "Authorization Mismatches": {
-            "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
-            "Whenever there is an authorization that is not an exact match to billed services, follow the instructions below": {
-                "Billed level of care is higher than authorized level of care. Example Facility bills with rev code 174 and auth is for rev code 172. Marketplace Note: Code 174: NICU Level IV Code 172: NICU Level II": "Pay as authorized except where DRG/percentage payments are applicable. In these cases, allow system to pay per contract amount unless otherwise instructed by state-specific Inpatient DRG Outlier instructions or state-specific DRG pricing calculators. AZ: Pay with auth. For no auth, deny using remit 197. WA NICU: Refer to the Authorization Business Matrix - All States and LOBs – Reference.",
-                "Billed level of care is higher than authorized level of care, cont.": "Marketplace: Validate the contract to see if NICU Levels II-IV pay the same: If the level of care billed pays the same as the level of care authorized, then pay the claim as billed. If the level of care billed pays more than the one authorized, then apply LOC reductions. Exception: The states of Florida and Utah are excluded from the inpatient LOC reduction. For all other states pricing at DRG, LOC reduction does not apply.",
-                "Billed level of care is lower than authorized level of care. Example Facility bills with rev code 172 and auth is for rev code 174.": "Pay as billed except when DRG/percentage payments are applicable. In these cases, allow system to pay per contract amount. AZ: Pay with auth. For no auth, deny using remit 192. WA NICU: Refer to the Authorization Business Matrix - All States and LOBs – Reference. Marketplace Note: Code 174: NICU Level IV Code 172: NICU Level II",
-                "Billed type of stay is not in same category as authorized level of care. Example Bill for... ICU Auth for... Cardiac Cath": "Pend and route to UM. AZ: Route to UMT for review. OH: If claim does not match services authorized, deny claim. Use denial code M62. Outpatient therapy services billed by SNF: Refer to Authorization Business Matrix - All States and LOBs – Reference.",
-                "Number of billed inpatient days exceeds number of authorized days. Example Facility bills for 4 days but only 3 days are authorized.": "Deny unauthorized days except for the following:\n\n- **AZ:**\n  - If not, all days are authorized and...\n    - claim hits an outlier,\n      - Then: pay base DRG with contract percentage if applicable and add remit N26.\n    - claim does not hit an outlier and member is verified as not having prior period coverage (PPC),\n      - Then: deny the claim with remit 198.\n\n- **AZ, MA, VA BH:** Add a line for unauthorized days and deny with remit 198 - UM has no available units.\n\n- **FL, UT Non-NICU:** Pend and route to UM\n\n- **TX:**\n\n- If not, all days are authorized and...\n  - the claim is paying at a percentage of billed,\n    - Then: claim will be denied requesting an itemized, if not attached.\n  - the claim is paying at a percentage of billed with itemized attached,\n    - Then: determine date span (days) not approved:\n      - Review itemized and add up charges for non-covered days.\n      - Billed Charges minus non-covered charges = xxx times percentage of billed.",
-                "Number of billed inpatient days exceeds number of authorized days, cont. Example Facility bills for 4 days but only authorized 3 days, cont.": {
-                    "KY": "Refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json.",
-                    "IL, WA, WA NICU": "Refer to the Authorization Business Matrix - All States and LOBs - Reference.",
-                    "MA, WA Inpatient": "Pay DRG as billed, discharge day is never paid.",
-                    "MI, OH": "Payable if it does not hit an outlier.",
-                    "TX": "",
+            "Billed level of care is lower than authorized level of care. Example Facility bills with rev code 172 and auth is for rev code 174.": {
+                "Pay as billed except when DRG/percentage payments are applicable. In these cases, allow system to pay per contract amount": {
+                    "Arizona": "Pay with auth. For no auth, deny using remit 192",
+                    "Washington NICU": "Refer to the Authorization Business Matrix - All States and LOBs – Reference",
+                    "Marketplace": "Pay the claim as billed"
+                }
+            },
+            "Billed type of stay is not in same category as authorized level of care. Example Bill for ICU,OB,SNF Auth for Cardiac,Cath": {
+                "Pend and route to UM": {
+                    "Arizona": "Route to UMT for review.",
+                    "Ohio": "If claim does not match services authorized, deny claim. Use denial code M62.",
+                    "Outpatient therapy services billed by SNF": "Refer to Authorization Business Matrix - All States and LOBs – Reference."
+                }
+            },
+            "Number of billed inpatient days exceeds number of authorized days. Example Facility bills for 4 days but only 3 days are authorized.": {
+                "Deny unauthorized days except for the following": {
+                    "Arizona": [
+                        {
+                            "If not, all days are authorized and claim hits an outlier": "Pay base DRG with contract percentage if applicable and add remit N26."
+                        },
+                        {
+                            "If not, all days are authorized and claim does not hit an outlier and member is verified as not having prior period coverage (PPC)": "deny the claim with remit 198."
+                        }
+                    ],
+                    "Arizona, Massachusetts, Virginia": "Add a line for unauthorized days and deny with remit 198 - UM has no available units.",
+                    "Florida, Utah Non-NICU": "Pend and route to UM",
+                    "Texas": [
+                        {
+                            "If not, all days are authorized and the claim is paying at a percentage of billed": "claim will be denied requesting an itemized, if not attached."
+                        },
+                        {
+                            "If not, all days are authorized andthe claim is paying at a percentage of billed with itemized attached": {
+                                "determine date span (days) not approved": [
+                                    "Review itemized and add up charges for non-covered days.",
+                                    "Billed Charges minus non-covered charges = xxx times percentage of billed."
+                                ]
+                            }
+                        }
+                    ],
+                    "Kentucky": "Refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json",
+                    "Illinois, Washington, WA NICU": "Refer to the Authorization Business Matrix - All States and LOBs - Reference.",
+                    "Massachusetts, Washington Inpatient": "Pay DRG as billed, discharge day is never paid.",
+                    "Michigan, Ohio": "Payable if it does not hit an outlier.",
                     "If not, all days were approved and...": {
                         "claim hits an outlier": "claim will be denied with denial code N26.",
                         "claim does NOT hit an Outlier and is paying at DRG": "proceed with paying base rate times contract percentage.",
@@ -100,21 +109,38 @@
                     }
                 },
                 "Some billed dates for inpatient service are either prior to or extend beyond authorized DOS. Example Auth is for dates 02/01-02/06 but bill is for dates 02/01-02/10.": {
-                    "AZ: Deny unauthorized days except": {
-                        "If not, all days are authorized and...": [
-                            {
-                                "Condition": "claim hits an outlier",
-                                "Action": "pay base DRG with contract percentage, if applicable, and add remit N26."
-                            },
-                            {
-                                "Condition": "claim does not hit an outlier",
-                                "Action": "deny the claim with remit 198."
-                            }
-                        ]
+                    "Arizona: Deny unauthorized days except": [
+                        {
+                            "If not, all days are authorized and claim hits an outlier": "pay base DRG with contract percentage, if applicable, and add remit N26."
+                        },
+                        {
+                            "If not, all days are authorized and claim does not hit an outlier and member is verified as not having prior period coverage (PPC)": "deny the claim with remit 198."
+                        }
+                    ],
+                    "Kentucky": "Refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json",
+                    "Massachusetts": "Pay as billed if difference is one day, otherwise deny (except BH claims). Deny additional days on a separate line with remit 198.",
+                    "Michigan": "For newborn delivery claims, pay the DRG and deny the outlier.",
+                    "Ohio": "Route to UM for only 1-day difference."
+                }
+            },
+            "Billing facility name and TIN on claim does not match authorized facility. Example Authorized facility is Santa Monica Hospital and bill is from St. John’s Hospital.": [
+                "Pend and route to UM.",
+                {
+                    "Ohio": "Deny for no auth if TIN does not match."
+                }
+            ],
+            "Billing provider name (non-facility) does not match authorized provider name (non-facility), and specialist is not affiliated with provider on auth. Example Auth is for Dr. Green and claim is from Dr. Collins. Dr. Collins and Dr. Green are not part of same medical group.": {
+                "Pend and route to UM.": [
+                    {
+                        "Illinois": "Do not route authorizations that start with AR (i.e., AR2888844) to UM for revision or update. These auths are created by NCH (New Century Health), process accordingly."
+                    },
+                    {
+                        "Massachusetts": "Billing provider name does not have to match if they are affiliated with the other group or PCP."
+                    },
+                    {
+                        "Ohio": "Deny for no auth if TIN does not match."
                     }
-                },
-                "Billing facility name and TIN on claim does not match authorized facility. Example Authorized facility is Santa Monica Hospital and bill is from St. John’s Hospital.": "Pend and route to UM. OH: Deny for no auth if TIN does not match.",
-                "Billing provider name (non-facility) does not match authorized provider name (non-facility), and specialist is not affiliated with provider on auth. Example Auth is for Dr. Green and claim is from Dr. Collins. Dr. Collins and Dr. Green are not part of same medical group.": "Pend and route to UM. IL: Do not route authorizations that start with AR (i.e., AR2888844) to UM for revision or update. These auths are created by NCH (New Century Health), process accordingly. MA: Billing provider name does not have to match if they are affiliated with the other group or PCP. OH: Deny for no auth if TIN does not match.",
+                ],
                 "Texas Modifiers billed on claim do not match the modifiers in the authorization.": "If the services are for LTSS related services, route claim to UM for review. If the services are related to therapy services, as long as the first set of modifiers are in the auth, proceed with processing. Note: For all other services, modifier combination does not need to match, proceed with processing.",
                 "CPT code on claim does not match authorized CPT code. Example Auth is for procedure code 58150 (total abdominal hysterectomy) and billed procedure is for 58550 (surgical laparoscopy with vaginal hysterectomy).": "Pend and route to UM.\n\n- CA: If provider is billing E/M code less than authorized E/M code, may be approved without routing to UM.\n- KY: Deny for no auth.\n- MI: If the provider is billing a similar CPT code that is less than the authorized code or a CPT code in the same service group, it may be approved without routing to UM.",
                 "CPT code on claim does not match authorized CPT code, cont. Example Auth is for procedure code 58150 (total abdominal hysterectomy) and billed procedure is for 58550 (surgical laparoscopy with vaginal hysterectomy), cont.": "- OH:\n  - Deny for no auth of performed services if codes are not in same service group.\n  - If claim hits outlier and facility is DRG-exempt (pays % of billed charges), or this is transferring claim, refer to Authorization Business Matrix - All States and LOBs – Reference.\n- VA: Claim billed with ABA therapy codes 97153-97158 and 0373T can be applied to an authorization for 97155.",
@@ -123,187 +149,83 @@
                 "Modifiers billed on claim do not match the modifiers in the authorization.": "AZ, KY, MA, VA, IA: Process claim as long as the authorization is on file for the service billed, modifiers do not have to match. KY Exception: Therapy services refer to the Therapy Services – Kentucky Medicaid – Processing Guideline.",
                 "Provider billed more units than approved. Example Provider has an authorization for five units, four units are used. Claim bills two units, leaving one unit that is not authorized.": "AZ, MA, WI, and All States Marketplace (refer to Paying up to Authorized Units - All States Marketplace - Job Aid.json): Split service line. Allow approved units on the first line. Deny remaining, unauthorized units on the second line. CA, KY: Split service line. Allow approved units on the first line. Deny remaining, unauthorized units on the second line. KY and TX: Units that exceed authorization deny 198. Note: If there are no units available for the units billed, then deny the entire service line.",
                 "KY: Edits for authorization fires on a facility claim. Approved authorization is on file. Authorization is attached to a professional claim. Example Authorization is on file for the services submitted on the facility claim, but the authorization is attached to a professional claim in history.": "OKAY auth edit(s). Add a claim memo referring to the professional claim in history. Complete claims processing."
-            }
-        },
-        "Services Not Authorized": {
-            "Place of Service POS 21, 22 or 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
-            "Provider bills with Pediatric ICU (PICU) and corresponding auth on file is for Neonatal ICU (NICU).": "Deny claim for a corrected claim using IN002.",
-            "All billed DOS are either prior to or extend beyond authorized DOS and do not overlap.": "Deny for no auth using 197.",
-            "Primary services do not require auth or have an auth, but services necessary to provide another related service do require auth (or vice versa).": "Pay all supporting services, except for AZ, MA, WA, then pend, and route to UM.",
-            "Primary services do not require auth or have an auth, but services necessary to provide another related service do require auth (or vice versa), cont.,": "WA outpatient: Deny unauthorized services (Edit fired for PA). Pay all supporting services as configured.",
-            "Oxygen container (canister) was authorized, but oxygen was not.": "For states/products that require auth for oxygen and container, if auth is present for one and not the other, pay both services.",
-            "Additional services performed beyond those authorized.": "Pay approved services and deny unauthorized services. Split the service line if needed.",
-            "Auth is for dates 02/05–02/08 and bill is for dates 01/02–01/03 or 04/25–04/30.": "Deny for no auth using 197.",
-            "Surgery for placement of pacemaker: Pacemaker requires auth, yet auth in system only has information relative to surgery (or vice versa).": "Pay all supporting services, except for AZ, MA, WA, then pend, and route to UM.",
-            "WA outpatient: Surgical service in outpatient setting requires auth per benefit edits. Other services on claim (such as lab and X-ray) do not require PA.": "WA outpatient: Deny unauthorized services (Edit fired for PA). Pay all supporting services as configured.",
-            "Therapy services (physical and occupational therapy) provided.": "Pay approved services and deny unauthorized services. Split the service line if needed.",
-            "Authorization status is closed with NO notes.": "Pend and route to UM\n- KY: Deny with remit code 197.\n- OH: Deny unauthorized services. Use 3 remit code M62.\nNote: For claims for OH Newborns, normal newborn stays require authorization for both PAR and NON-PAR providers. Baby is covered under mother’s authorization if baby and mother are discharged at the same time. Newborn stays require a separate authorization if mother is discharged prior to baby (Boarder baby). Newborn E&M codes do not require authorization for PAR or NON-PAR providers, even when rendered at a NON-PAR facility.",
-            "Authorization status is closed with notes.": "Process based on authorization notes, except when services are approved as noted. In this case, route claim to UM for authorization update.",
-            "Authorization is in one of the following statuses: INPROCESSAZ, MEDREVIEWTX, PEND": [
-                "Pay claims as long as services are authorized at service line level in authorization.",
-                "Interim Claims (Type of Bill 112–113)/ OH HHC and SNF: Refer to the Authorization Business Matrix - All States and LOBs – Reference.",
-                "Authorizations in the MEDREVIEW or INPROCESS header level status may be used to pay services as long as the services are authorized and approved at the service line level in the authorization.",
-                "Authorizations for Behavioral Health Intermediate claims will consistently be in INPROCESS or MEDREVIEW status under PA header level status. These claims can be paid as long as services are authorized at service line level in authorization.",
-                "Pay claims as long as services are authorized at service line level in the authorization.",
-                "Interim Claims (Type of Bill 112–113)/ OH HHC and SNF: Refer to the Authorization Business Matrix - All States and LOBs – Reference.",
-                "Authorizations in the MEDREVIEW or INPROCESS header level status may be used to pay services as long as the services are authorized and approved at the service line level in the authorization.",
-                "Authorizations for Behavioral Health Intermediate claims will consistently be in INPROCESS or MEDREVIEW status under PA header level status. These claims can be paid as long as services are authorized at service line level in authorization.",
-                "Pay claims as long as services are authorized at service line level in the authorization."
-            ],
-            "Authorization is required but medical records are not attached.": "Deny for no authorization.",
-            "KY: Authorization is required for Maternity/Labor and Delivery, and the authorization is not on file.": "The diagnosis code or DRG billed is related to maternity and/or labor and delivery. Refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json",
-            "OH Nationwide Children's Hospital capitated claims:": "Refer to the Authorization Business Matrix - All States and LOBs – Reference.",
-            "Route claim to UM for determination.": "When the claim is returned, process the claim based on UM determination:\n• If UM approves and, or adds an authorization, continue with normal processing guidelines.\n• If UM denies or confirms that no authorization will be issued, deny the claim with remit code 197."
-        },
-        "Temporary Provider Authorization": {
-            "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
-            "If an authorization exists that covers any of the billed date(s) of service and is loaded under Temporary Provider, follow the steps listed below": {
-                "Step 1": "Review non-clinical notes for provider demographic information.",
-                "Step 2": {
-                    "If provider demographic information is listed": "attach authorization to claim. Note: The examiner may need to route the claim to UM for authorization update to reflect the authorized provider. (End)",
-                    "If No provider information is found in non-clinical notes": "route claim to UM for further review. AZ Exception: If authorization is an NIA authorization, pay the claim with authorization on file that matches the claim. (End)",
-                    "If Claim is aged": "process the claim accordingly and add a memo to support processing the claim. (End)",
-                    "If “refer to” field in the auth module lists “temporary provider,”": "pend and route to UM with following memo: “Please advise if Authorization ID#XXXX is for billing provider XXXX.” (End)"
+            },
+            "Texas - Modifiers billed on claim do not match the modifiers in the authorization.": [
+                {
+                    "If the services are for LTSS related services": "route claim to UM for review."
+                },
+                {
+                    "the services are related to therapy services, as long as the first set of modifiers are in the auth": "proceed with processing."
                 }
-            }
-        },
-        "For Place of Service POS 21 22 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json",
-        "Other Miscellaneous": {
-            "Follow the instructions": {
-                "Inpatient Non-Emergent facility claim requiring an authorization and no authorization is on file.": "Deny claim for no authorization with remit code 197.",
-                "Overlapping authorizations or multiple useable authorizations exist for service. Two authorizations for 20 visits each exist for OT; one spans Jan–Mar; other spans Feb–Apr.": "Pend and route to UM. MA, OH: Pay as billed if available units and DOS fall within either authorization.",
-                "UM non-clinical notes are inconsistent with authorization. Authorization is for 3 days but non-clinical notes state authorized 4 days.": "Pend and route to UM.",
-                "Services do not require authorization; however, entered authorization conflicts with submitted claim. Claim is billed with C-section delivery payable without authorization; however, the authorization on file is for vaginal delivery.": "Pay as billed.",
-                "Authorized units/visits exceed benefit maximums. Allowed two skilled nursing visits per day but authorized three visits.": "Pay as authorized.",
-                "Authorization error; date span conflicts with authorized number of days. Authorized four inpatient days for 3-day date span (for example, FDOS 11/01/18 and LDOS 11/04/18, which is 3-day date span, but authorization units are for 4 days).": "Pend and route to UM. AZ: Refer to “Authorization Mismatches” regarding discharge day. MA: If the authorization has additional units authorized beyond the DOS, then pay the claim for the DOS billed. If less units are billed, and the reimbursement method is DRG, then pay DRG as billed. Note: The discharge day is never paid.",
-                "Non-covered authorized services": "Pay as authorized. If pricing is not included in authorization, pend and route to UM. KY: Refer to the Single Case Agreement (SCA)Letters of Agreement (LOA) -Kentucky Medicaid - Job Aid.json, AZ: Refer to the Single Case Agreement (SCA) Letters of Agreement (LOA) - Arizona Medicaid - Job Aid, WA: Refer to WA only for claims requiring manual pricing.",
-                "UM authorizes DME rental(s) and multiple units but only one authorized date.": "Billed five units of oxygen for five dates of purchase, but only 1 DOS is payable based on authorization. Pend and route to UM.",
-                "UM authorizes DME for rental, and the claim is": "Pend and route to UM.",
-                "billed for purchase (or vice versa).": "OH: If denial remit exists and authorization does not indicate purchase or rental, route to UM.",
-                "UM approves services for 6 months of DME but does not indicate quantity. Example Authorized incontinence supplies with no indication of how many are payable per month.": "Pend and route to UM.",
-                "CA: When edit 613 fires and authorization is in “approved” status but “Assigned Services” on the authorizations Diag/ Services tab are set to pend.": {
-                    "Review Non-Clinical Notes for claim pricing instructions": {
-                        "If… instructions exist": "manually price claim accordingly.",
-                        "If… no pricing instructions,": "pend claim and route to UM for more instructions."
-                    }
-                },
-                "FL: Observation claims use the following authorization with LOC description - “Inpatient Accommodation LOC SHORT STAY-SURGICAL <24 HR”": {
-                    "Refer to the table below to process": {
-                        "If… provider bills the claim as inpatient for observation services,": "the claim must be denied for incorrect billing.",
-                        "If… provider bills claim for observation services with the correct authorization and LOC description,": "process accordingly."
-                    }
-                },
-                "FL: Inpatient claim has multiple authorizations on file in approved status. Example Claim is for DOS 02/01-02/10 and there are two approved inpatient authorizations for 02/01-02/06 AND 02/07-02/10.": {
-                    "Route claim to UM for review:": {
-                        "If UM combines two authorizations": "Then process claim accordingly.",
-                        "If UM indicates authorizations are for two separate inpatient confinements": "Then deny claim with remit code IN002, add Processor Remit Comment: \"Please resubmit separate bills for each confinement period.\""
-                    }
-                },
-                "MI & NM: Primary services do not require or have authorization, but services necessary to provide another related service do require auth (or vice versa). Example Surgery for placement of pacemaker: Pacemaker requires an authorization, yet the authorization in the system only contains information relative to surgery (or vice versa).": "Pend and route to UM.",
-                "MI & NM: Provider is billing more units than approved for PCS/LTSS services Example Provider is authorized for 500 units, 490 are used, and claim bills for 20 units.": "Split claim line, allow approved units, and deny remaining as non-authorized.",
-                "WA: A claims examiner receives a claim that requires manual pricing. Example No pricing is available on the PA in the core claims processing system.": "Pend and route to CIM for pricing."
-            }
-        },
-        "If received claim requiring authorization and • no authorization is on file,• medical records are not attached • services are part of an ER admission": "Then Deny claim for no authorization",
-        "If denied claim for no authorization (previous scenario) appropriately and: provider resubmits claim with attached medical records; no formal appeal/PDR is submitted": {
-            "Then": "CA: Route claim to MCR. All other states: Route to UM and indicate in K2 Workflow’s comment section: 'Medical Records are attached.'",
-            "UM will": [
-                "1. Deny claim: Emergency medical condition does not appear to exist, and services are not authorized (authorization will reflect denial), or",
-                "2. Partial payment: Pay (specifies, for example, revenue code 450, and so on) due to the existence of emergency medical condition and deny (specifies, for example, all other services) due to lack of authorization (authorization will reflect denial), pr",
-                "3. Pay the entire claim."
             ],
-            "Refer to the table below to process accordingly:": "Scenario 1: N391; Scenario 2: 197; Scenario 3: n/a"
-        },
-        "If received claim requiring authorization and no authorization is on file but medical records are attached": {
-            "Then": "CA: Route claim to MCR. All other states: Route to UM and indicate in K2 Workflow’s comment section: 'Medical Records are attached.'",
-            "UM will": [
-                "1. Deny claim: Emergency medical condition does not appear to exist, and services are not authorized (authorization will reflect denial), or",
-                "2. Partial payment: Pay (specifies, for example, revenue code 450, and so on) due to the existence of emergency medical condition and deny (specifies, for example, all other services) due to lack of authorization (authorization will reflect denial), pr",
-                "3. Pay the entire claim."
-            ],
-            "Refer to the table below to process accordingly:": "Scenario 1: N391; Scenario 2: 197; Scenario 3: n/a"
-        },
-        "If received claim requiring authorization and: no authorization is on file, medical records not attached but services are part of emergency admission,": {
-            "Then": "route to UM. Note: UM may require Claims to request medical records to determine if an emergency medical condition exists. If this occurs, follow the current claim process. CA: Deny claim (requesting medical records). OH: Deny for no auth.",
-            "UM will": [
-                "1. Deny claim: Emergency medical condition does not appear to exist, and services not authorized (auth will reflect denial), or",
-                "2. Partial payment: Pay (specifies, for example, revenue code 450, and so on) due to existence of emergency medical condition and deny (specifies, for example, all other services) due to lack of authorization (authorization will reflect denial), or",
-                "3. Pay entire claim."
-            ],
-            "Refer to the table below to process accordingly:": "Scenario 1: N391; Scenario 2: 197; Scenario 3: n/a"
-        },
-        "Authorization Service Group": [
-            "A group of CPT codes that are defined as service groups that can be authorized together.",
-            "A provider may bill any one of the authorized CPT codes within the service group. Refer to the description to identify which CPT codes are part of the “CPT Group” and to determine if the authorization may be used on the CPT billed",
-            "Note: Refer to the Auth Service Groupers – All States and LOBs – Reference"
-        ],
-        "Florida Medicaid and Marketplace and Puerto Rico: Referral Requirement for Specialists": {
-            "Effective with a 'go live' date of 11/29/18, certain specialty visits require a referral. The scope of this new requirement includes the following": [
-                "Florida Medicaid and Marketplace LOB and Puerto Rico plan members must obtain referrals from their PCP before seeking treatment from a specialist",
-                "FL and PR Molina providers will submit referrals for their assigned members via the online portal prior to a patient seeking treatment from a specialist",
-                "Specialists can view details submitted for members that have been referred to them",
-                "Members will have access to view their referral details"
-            ],
-            "Two new edits have been developed in connection with this referral requirement": {
-                "Edit No. 236": {
-                    "When the benefit requires either a PCP referral or a UM supporting document, specifically for these scenarios": [
-                        "E&M codes 99201-99215",
-                        "consultation codes 99241-99245",
-                        "POS 02",
-                        "POS 11",
-                        "POS 17",
-                        "POS 18",
-                        "POS 49",
-                        "POS 50",
-                        "POS 72",
-                        "referral required for specific specialties based on the provider's primary specialty as viewed on the Specialty tab of the provider record in the provider module",
-                        "Billed by a specialty that requires a referral – refer to Exhibit I.",
-                        "A referral is not attached to the claim line."
-                    ],
-                    "Follow these instructions": {
-                        "If there is a single claim line And primary specialty is on the list": "deny edit 236 with remit code N489",
-                        "If there is a single claim line And primary specialty is not on the list": "OK edit 236",
-                        "If there are multiple claim lines And primary specialty is on the list": "deny the claim with N489",
-                        "If there are multiple claim lines And primary specialty is not on the list": "OK edit 236 and process all other lines per applicable guidelines"
+            "CPT code on claim does not match authorized CPT code. Example Auth is for procedure code 58150 (total abdominal hysterectomy) and billed procedure is for 58550 (surgical laparoscopy with vaginal hysterectomy).": {
+                "Pend and route to UM.": [
+                    {
+                        "California": "If provider is billing E/M code less than authorized E/M code, may be approved without routing to UM."
+                    },
+                    {
+                        "Kentucky": "Deny for no auth."
+                    },
+                    {
+                        "Michigan": "If the provider is billing a similar CPT code that is less than the authorized code or a CPT code in the same service group, it may be approved without routing to UM."
                     }
+                ]
+            },
+            "CPT code on claim does not match authorized CPT code, cont. Example Auth is for procedure code 58150 (total abdominal hysterectomy) and billed procedure is for 58550 (surgical laparoscopy with vaginal hysterectomy), cont.": [
+                {
+                    "Ohio": [
+                        "Deny for no auth of performed services if codes are not in same service group.",
+                        "If claim hits outlier and facility is DRG-exempt (pays % of billed charges), or this is transferring claim, refer to Authorization Business Matrix - All States and LOBs – Reference."
+                    ]
                 },
-                "Edit No. 617": [
-                    "Provider’s specialty does not match authorized specialty, specifically for these claim scenarios",
-                    "E&M codes 99201–99215 and consultation codes 99241–99245",
-                    "Billed with POS 02, 11, 17, 18, 49, 50, 72",
-                    "Billed by one of the specialties that requires a referral",
-                    "The specialty of the billing provider does not match the specialty on the referral attached to the claim line",
-                    "Review all referrals to ensure the correct referral is attached to the claim. If the correct referral is not located, “deny edit 617” with remit code N476.",
-                    "Note: There will be no 'refer to provider,' just a 'refer to Specialty' which is only viewable in the referral on the Clinical Notes tab",
-                    "Referral numbers (UM Document IDs) will show in the UM Document ID field and will begin with REF followed by ten numerals. This will be in the member file, on the UM Documents tab, UM Document ID field"
+                {
+                    "Virginia": "Claim billed with ABA therapy codes 97153-97158 and 0373T can be applied to an authorization for 97155."
+                }
+            ],
+            "Modifiers billed on claim do not match the modifiers in the authorization.": {
+                "Arizona, Kentucky, Massachusetts, Virginia, Iowa": "Process claim as long as the authorization is on file for the service billed, modifiers do not have to match.",
+                "Kentucky Exception": "Therapy services refer to the Therapy Services – Kentucky Medicaid – Processing Guideline."
+            },
+            "Provider billed more units than approved. Example Provider has an authorization for five units, four units are used. Claim bills two units, leaving one unit that is not authorized.": {
+                "Arizona, Massachusetts, Wisconsin, and All States Marketplace": [
+                    "Split service line.",
+                    "Allow approved units on the first line.",
+                    "Deny remaining, unauthorized units on the second line."
+                ],
+                "California, Kentucky": [
+                    "Split service line.",
+                    "Allow approved units on the first line.",
+                    "Deny remaining, unauthorized units on the second line."
+                ],
+                "Kentucky and Texas": "Units that exceed authorization deny 198.",
+                "Note": "If there are no units available for the units billed, then deny the entire service line."
+            },
+            "Kentucky": {
+                "Scenario": [
+                    "Edits for authorization fires on a facility claim.",
+                    "Approved authorization is on file.",
+                    "Authorization is attached to a professional claim."
+                ],
+                "Actions": [
+                    "OKAY auth edit(s).",
+                    "Add a claim memo referring to the professional claim in history.",
+                    "Complete claims processing."
                 ]
             }
-        },
-        "For the New York State": "Refer to the Private Duty Nursing - New York Medicaid - Processing Guideline.json - Processing Guideline for information regarding authorization for members receiving services from multiple independent nurses.",
-        "Ohio: Edit 604": {
-            "Follow these steps when edit 604 fires": [
-                "Review all authorizations related to the claim.",
-                "Confirm that there are no approved authorizations for the provider, type of service, date of service, etc.",
-                "Deny the claim with remit code 39."
-            ]
-        },
-        "Remit Codes": {
-            "39": "Services denied at the time authorization/pre-certification was requested.",
-            "197": "Precertification/authorization/notification/pre-treatment absent.",
-            "198": "Precertification/notification/authorization/pre-treatment exceeded.",
-            "284": "Precertification/authorization/notification/pre-treatment number may be valid but does not apply to the billed services.",
-            "IN002": "Incorrect billing.",
-            "M62": "Missing/incomplete/invalid treatment authorization code.",
-            "N26": "Missing itemized bill/statement.",
-            "N391": "Missing emergency department records.",
-            "N476": "Incomplete/Invalid completed referral form.",
-            "N489": "Missing referral form."
         }
     },
+    "Place of Service POS 21, 21, 23": "Refer to the Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json to extract the information from the relevant POS mentioned.",
+    "New York State": "Refer to the Private Duty Nursing - New York Medicaid - Processing Guideline.json - Processing Guideline for information regarding authorization for members receiving services from multiple independent nurses.",
+    "Ohio: Edit 604": {
+        "Follow these steps when edit 604 fires": [
+            "Review all authorizations related to the claim.",
+            "Confirm that there are no approved authorizations for the provider, type of service, date of service, etc.",
+            "Deny the claim with remit code 39.",
+            "Refer to the Authorization Exceptions Matrix - Ohio Medicaid.json"
+        ]
+    },
     "References": [
-        "Refer to the Authorization Business Matrix All States and LOBs Reference",
-        "Refer to the Authorization Non-Clinical Notes CA Medicaid Job Aid.json",
-        "Refer to the Auth Service Groupers All States and LOBs Reference",
+        "Refer to the Authorization Non-Clinical Notes California Medicaid Job Aid.json",
         "Refer to the Authorization Exceptions Matrix - Ohio Medicaid - Reference.json",
         "Refer to the Inpatient Facility Claims Processing Requirements by State All State Medicaid Job Aid",
         "Refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json",
@@ -313,6 +235,5 @@
         "Refer to the Single Case Agreement (SCA) Letters of Agreement (LOA) - Arizona Medicaid - Job Aid.json",
         "Refer to the Single Case Agreement (SCA)Letters of Agreement (LOA) -Kentucky Medicaid - Job Aid.json",
         "Refer to the Therapy Services Kentucky Medicaid Processing Guideline.json"
-    ],
-    "Notes": "Review non-clinical notes and determine proper action."
+    ]
 }

@@ -1,0 +1,46 @@
+{
+    "Inpatient Hospital Guidelines by Texas": {
+        "Authorization Requirements": {
+            "Authorization Guidelines": {
+                "Instructions": [
+                    "Examiners are required to verify if a system authorization is required.",
+                    "If yes, then examiners are required to verify whether or not a system authorization exists.",
+                    "DOS Prior to 3-1-2024: No authorization is required for 2 days of normal delivery and up to 3 days of C-section.",
+                    "DOS on or after 3-1-2024: No authorization is required for 3 days of normal delivery and up to 5 days of C-section."
+                ]
+            },
+            "Exception": {
+                "No Authorization Required for": [
+                    "MEMORIAL HERMANN (MHHS) - Spell of Illness applies",
+                    "UT SOUTHWESTERN (PROFESSIONAL)",
+                    "DALLAS COUNTY (PARKLAND) < 5 OB DAYS + OP PAR"
+                ]
+            },
+            "NPI Numbers for Exception": [
+                "1043457583",
+                "1295788735",
+                "1295843787",
+                "1710985098",
+                "1730132234",
+                "1740233782",
+                "1932152337",
+                "1982666111",
+                "1205900370"
+            ],
+            "Note": [
+                "We cannot deny a claim per their contract unless it is for the following:",
+                "Member not eligible during the DOS",
+                "Timely filing not met",
+                "Service billed is not a benefit"
+            ]
+        },
+        "Spell Of Illness (SOI)": [
+            "Medicaid covers up to 30 days in the hospital in a benefit period. A new 30 day benefit period starts when the member has been out of the hospital for at least 60 days in a row.",
+            "If the member's spell of illness has been met; then deny the claim with remit N587, 'Policy benefits have been exhausted.'",
+            "Refer to Place of Service 21, 22, 23 (UB VS CMS 1500) - All States Medicaid - Job Aid.json for POS 21, 22 or 23"
+        ]
+    },
+    "Inpatient Hospital Guidelines by Kentucky": {
+        "Inpatient Partial Authorization": "Refer to the Inpatient Partial Authorization Process - Kentucky Medicaid - Job Aid.json"
+    }
+}
