@@ -100,4 +100,5 @@ You have access to the following tools:
 
 ###Important Note:
 - The response provided by the `guide` tool is the only set of instructions you need to follow and implement.
+- Only Provide the answer do not not include any explanation.
 """
