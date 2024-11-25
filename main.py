@@ -62,10 +62,13 @@ async def data_streamer(query,file_path):
         if msg.content and metadata["langgraph_node"] == "agent":
             final_message += msg.content
         
-    res = final(processed_claim)["output"]
+    output_stream = io.StringIO()
+    with redirect_stdout(output_stream):
+        res = final(processed_claim)
+    verbose_output = output_stream.getvalue()
     logging.info(f"Timely filing Processed")
     
-    yield final_message + "\n" + res
+    yield final_message + "\n" + verbose_output
 
 
 

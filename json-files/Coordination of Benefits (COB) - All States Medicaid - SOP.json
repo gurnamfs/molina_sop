@@ -1,5 +1,5 @@
 {
-    "Processing COB Edits When External Enrollment is secondary, and No EOB is Submitted": [
+    "Processing COB Edits When External Enrollment is secondary, Line Number 0 and No EOB is Submitted": [
         "Confirm the COB segment and external enrollment status.",
         "Check state-specific guidelines to see if the service is exempt from EOB requirements.",
         "If no EOB is attached and the service is not exempt, deny the claim and request an EOB with the appropriate remit code."
@@ -8,13 +8,19 @@
         "Medicare Services Covered": "Part A: Inpatient hospital care, hospice, skilled nursing, and home health services. Part B: Outpatient services, diagnostics, therapies, and preventive care.",
         "Rules for Processing Medicare Claims": "If a member has only Medicare Part B, Molina becomes the primary payer for inpatient claims. If Medicare exhausts benefits or denies a claim, Molina acts as secondary."
     },
-    "Processing Claims when External Enrollment is Secondary and EOB is Submitted and Edit Number is Present": [
+    "Processing Claims when External Enrollment is Secondary and EOB is Submitted": [
         "If Molina is Paying the difference - No Authorization is required",
         "If primary payer denied the claim - Deny the claim for lack of authorization and route it to UMT for review",
         "If the primary payer did not provide an EOB - Confirm the COB segment and external enrollment status.",
         "Refer to the Authorization Business Process - All States and LOBs - SOP.json to Check the section for the specified State. If no sections are present for the specified State, Only then proceed to verify other applicable sections."
     ],
-    "Processing Claims when External Enrollment is Secondary and EOB is Submitted": {
+    "Processing Claims when External Enrollment is Primary and EOB is Submitted": [
+        "If Molina is Paying the difference - No Authorization is required",
+        "If primary payer denied the claim - Deny the claim for lack of authorization and route it to UMT for review",
+        "If the primary payer did not provide an EOB - Confirm the COB segment and external enrollment status.",
+        "Refer to the Authorization Business Process - All States and LOBs - SOP.json to Check the section for the specified State. If no sections are present for the specified State, Only then proceed to verify other applicable sections."
+    ],
+    "Processing Claims when External Enrollment is Secondary, Line Number 0, and EOB is Submitted": {
         "COB_Payment_Calculation_Methods_Calculations": [
             "1. Adjudicate the claim on the Pay tab in the Claims module to determine Molina’s regular allowable, manually pricing, as necessary. Based on system configuration, the core claims processing system will calculate the appropriate final reimbursement amount(s).",
             "2. Review how the COB payment information is applied on the claim (Method 2, 3, 9 or 10). Click on the Edits tab and scroll past the Calculate Contract Amounts to the section entitled COB Calculations.",
@@ -24,14 +30,14 @@
             "Method-10: Pay the lesser of patient responsibility or Molina allowable minus the primary payment."
         ]
     },
-    "Processing Claims When External Enrollment is primary and EOB is Submitted": {
+    "Processing Claims When External Enrollment is primary, Line Number 0 and EOB is Submitted": {
         "Steps to Follow": [
             "Pend the claim and route it to the Eligibility Department (OIV queue).",
             "Add a comment: 'Requires COB segment, EOB attached.'",
             "Once the eligibility is updated, process the claim according to state-specific COB rules."
         ]
     },
-    "Processing Claims When External Enrollment is primary and No EOB is Submitted": {
+    "Processing Claims When External Enrollment is primary, Line Number 0 and No EOB is Submitted": {
         "Steps to Follow": [
             "COB does not apply",
             "Process claim as primary."

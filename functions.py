@@ -35,6 +35,15 @@ llm = AzureChatOpenAI(
     max_tokens=None,
 )
 
+model = AzureChatOpenAI(
+    azure_endpoint="https://firstsenseai.openai.azure.com",
+    azure_deployment="gpt432k",
+    api_version="2024-05-01-preview",
+    api_key=API_KEY,
+    temperature=0,
+    max_tokens=None,
+)
+
 class Format(BaseModel):
     file_path: str = Field(description="file_path in the text")
     query: str = Field(description="Exact process step to perform on the .json")
@@ -98,9 +107,9 @@ def final(claim):
             handle_parsing_errors=True,
             prefix=prefix,
             suffix=suffix,
-            llm=llm,
+            llm=model,
             toolkit=json_toolkit,
-            verbose=False,
+            verbose=True,
         )
 
         response = json_agent_executor.invoke(
