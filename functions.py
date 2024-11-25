@@ -113,7 +113,7 @@ def final(claim):
         )
 
         response = json_agent_executor.invoke(
-            "Extract only the information related to the specified State: " + claim + "\n\nNote: Return data for timely filing without any extra information."
+            "Extract only the information related to timely filing for the specified State:\n" + claim
         )
         logging.info(f"Received Timely Filing response")
 
@@ -121,3 +121,11 @@ def final(claim):
     except Exception as e:
         logging.error(f"Error Timely Filing: {e}")
         return "Error in Timely Filing"
+
+
+
+def summary(navigation_steps):
+    prompt = f"""Your task is to return a consolidated Final Answer by combining all the Final Answers or Observations (If No Final Answer) in a readable format. Ensure no additional information is added.
+    {navigation_steps}"""
+    res = model.invoke(prompt)
+    return res.content

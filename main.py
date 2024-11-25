@@ -3,7 +3,7 @@ import re
 from contextlib import redirect_stdout
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from functions import initial_checks, final
+from functions import initial_checks, final, summary
 # from functions import initial_checks
 from tool_func import langgraph_agent_executor, guide_tool
 from prompts import sys
@@ -12,6 +12,7 @@ import logging
 from fastapi.responses import StreamingResponse
 import asyncio
 from langchain_core.messages import AIMessageChunk, HumanMessage
+from pydantic import BaseModel
 
 logging.basicConfig(
     level=logging.INFO,  # Change this to DEBUG for more detailed #logging
@@ -31,6 +32,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 
 async def data_streamer(query,file_path):
     guide_tool.clear()
@@ -120,3 +123,9 @@ async def sop_navigation(
     except Exception as e:
         logging.error(f"Error during SOP execution: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/summarize_navigation/")
+async def summarize_navigation(steps):
+    result = summary(steps)
+    return {"Summary": result}

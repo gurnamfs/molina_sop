@@ -72,6 +72,9 @@ def create_agent(file_path: str, query: str) -> str:
             llm=model,
             toolkit=json_toolkit,
             verbose=True,
+            agent_executor_kwargs = {
+                'max_iterations': 30
+            }
         )
     except Exception as e:
         return "Error in Create Agent"
