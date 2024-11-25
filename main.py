@@ -36,17 +36,9 @@ async def data_streamer(query,file_path):
     guide_tool.clear()
     logging.info(f"Received Request for SOP Navigation with query: {query} and file path: {file_path}")
     final_message = ""
-    # messages.clear()
-    # messages.append(("system", sys))
-    # logging.debug("Messages cleared and system message added.")
     processed_claim = initial_checks(query)
     guide_tool.append(processed_claim)
-    # guide_tool.append(query)
-    # res = final(processed_claim)["output"]
-    # logging.info(f"Timely filing Processed")
-    # logging.info(f"Processed claim")
     inp = f"Please process create_agent(file_path= json-files/{file_path}, query= {processed_claim})"
-    # logging.debug(f"First Input to LangGraph agent: {inp}")
     
     async for msg, metadata in langgraph_agent_executor.astream(
         {"messages": [("user", inp)]}, stream_mode="messages"

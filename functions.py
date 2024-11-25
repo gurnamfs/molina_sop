@@ -113,7 +113,7 @@ def final(claim):
         )
 
         response = json_agent_executor.invoke(
-            "Extract information only for the specified state: " + claim + "\n\nNote: Return the Final Answer in a readable format without modifying any information."
+            "Extract only the information related to the specified State: " + claim + "\n\nNote: Return data for timely filing without any extra information."
         )
         logging.info(f"Received Timely Filing response")
 

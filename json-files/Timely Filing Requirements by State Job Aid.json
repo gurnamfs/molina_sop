@@ -10,15 +10,18 @@
             "For hospital inpatient claims, 'date of service' means the date of discharge of the patient."
         ],
         "time_limit_for_submitting_additional_info_on_denied_claim": [
-            "A provider must institute any claim dispute challenging the claim denial or adjudication within 12 months from one of the following:",
-            "▪ The ending date of service",
-            "▪ The date of the member’s eligibility posting",
-            "▪ For a hospital inpatient claim:",
-            "   ▪ Within 12 months from the date of discharge, or",
-            "   ▪ Within 60 days after the date of the denial of a timely claim submission, whichever is later.",
-            "Note:",
-            "▪ The date of receipt by Office of Administrative Legal Services (OALS) is considered the date the claim dispute is filed.",
-            "▪ For a retro-eligibility claim, the provider must institute any claim dispute within 12 months from the date of the eligibility posting."
+            {
+                "A provider must institute any claim dispute challenging the claim denial or adjudication within 12 months from one of the following": [
+                    "The ending date of service",
+                    "The date of the member’s eligibility posting"
+                ]
+            },
+            {
+                "For a hospital inpatient claim": [
+                    "Within 12 months from the date of discharge",
+                    "Within 60 days after the date of the denial of a timely claim submission, whichever is later."
+                ]
+            }
         ],
         "tpl_cob_claims": [
             "Six months from the date of contest, denial or notice from the primary payer (date on EOB) to submit COB payment information."
@@ -128,7 +131,7 @@
         "standard_filing_time": {
             "contracted_provider": "Varies based upon provider contract.",
             "all_providers": "180 days from DOS",
-            "proof_of_timely_filing may be required such as":[
+            "proof_of_timely_filing may be required such as": [
                 "A copy of a computer print screen with all of the following: the billed date within the timely filing limit which includes the patient’s name, date of service, billed amount, submitted date and insurance where charges were submitted.",
                 "EDI payor acceptance reports; must include patient name, date of service, billed amount, submitted date and insurance where charges were submitted.",
                 "EOB received from another payer recouping the payment previously made due to retro-active disenrollment leaving Molina as primary as long as receipt date is within 90 days from the date on the EOB take back for date of service or within the standard timely filing timeframe."
@@ -207,9 +210,6 @@
             "UB-04: Claims must be submitted by Provider to Passport within 365 calendar days after the discharge for inpatient services or the Date of Service for outpatient services unless otherwise specified in a provider's contract.",
             "If the corrected claim is related to new/changed/corrected primary EOB payment information, follow TPL/COB claims classification",
             "Normal timely filing limits apply to corrected claims if they are submitted within the original 365-day timely filing limit."
-        ],
-        "remit_codes": [
-            "29: The time limit for filing has expired."
         ]
     },
     "Massachusetts": {
