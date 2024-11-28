@@ -3,7 +3,8 @@ import re
 from contextlib import redirect_stdout
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from functions import initial_checks, final, summary
+from functions import initial_checks, final
+from summarize import summary
 # from functions import initial_checks
 from tool_func import langgraph_agent_executor, guide_tool
 from prompts import sys
@@ -41,7 +42,7 @@ async def data_streamer(query,file_path):
     final_message = ""
     processed_claim = initial_checks(query)
     guide_tool.append(processed_claim)
-    inp = f"Please process create_agent(file_path= json-files/{file_path}, query= {processed_claim})"
+    inp = f"Please process create_agent(file_path= {file_path}, query= {processed_claim})"
     
     async for msg, metadata in langgraph_agent_executor.astream(
         {"messages": [("user", inp)]}, stream_mode="messages"
@@ -62,8 +63,13 @@ async def data_streamer(query,file_path):
         res = final(processed_claim)
     verbose_output = output_stream.getvalue()
     logging.info(f"Timely filing Processed")
+    verbose_output = verbose_output.replace("Entering new AgentExecutor chain...", "").replace("Action: json_spec_list_keys", "").replace("Action: json_spec_get_value", "").replace("ValueError", "")
+        
+    cleaned_text = re.sub(
+            r"\u001b\[\d+;\d+m|\u001b\[0m|\u001b\[1m>", "", verbose_output
+        )
     
-    yield final_message + "\n" + verbose_output
+    yield final_message + "\n" + cleaned_text
 
 
 
@@ -125,7 +131,12 @@ async def sop_navigation(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# @app.post("/summarize_navigation/")
+# async def summarize_navigation(steps):
+#     result = summary(steps)
+#     return {"Summary": result}
+
+
 @app.post("/summarize_navigation/")
 async def summarize_navigation(steps):
-    result = summary(steps)
-    return {"Summary": result}
+    return await summary(steps)

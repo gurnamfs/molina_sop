@@ -9,6 +9,35 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 import logging
+from azure.identity import AzureCliCredential
+from azure.mgmt.storage import StorageManagementClient
+from azure.storage.blob import BlobClient, BlobServiceClient
+from langchain_core.globals import set_llm_cache
+from langchain_core.caches import InMemoryCache
+set_llm_cache(InMemoryCache())
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+# AZURE_SUBSCRIPTION_ID = os.getenv("AZURE_SUBSCRIPTION_ID")
+
+
+# credential = AzureCliCredential()
+# storage_client = StorageManagementClient(credential,AZURE_SUBSCRIPTION_ID)
+
+
+STORAGE_ACCOUNT_BASE = 'molinablobstorage'
+
+container_name = 'molina-bob-container'
+
+blob_service_client = BlobServiceClient.from_connection_string(
+    conn_str = os.getenv("CONN_STR_MOLINA")
+    # account_url = "https://molinablobstorage.blob.core.windows.net/",
+    # credential = credential
+)
+
+container_client = blob_service_client.get_container_client(container=container_name)
+
 
 logging.basicConfig(
     level=logging.INFO,  # You can change this to DEBUG or ERROR as needed
@@ -20,9 +49,16 @@ logging.basicConfig(
 
 
 
-load_dotenv()
+def azure_file_path(file_path):
+    download_blob_client = blob_service_client.get_blob_client(
+    container = container_name,
+    blob = file_path
+    )
+    with open(file_path, "wb") as data:
+        download_stream = download_blob_client.download_blob()
+        data.write(download_stream.readall())
 
-API_KEY = os.getenv("API_KEY")
+    return file_path
 
 
 
@@ -34,6 +70,7 @@ llm = AzureChatOpenAI(
     temperature=0,
     max_tokens=None,
 )
+
 
 model = AzureChatOpenAI(
     azure_endpoint="https://firstsenseai.openai.azure.com",
@@ -75,10 +112,10 @@ def initial_checks(claim):
     try:
         prompt = return_system_prompt + f"""`Claim`: {claim}"""
         
-        res = llm.invoke(prompt).content
+        res = llm.invoke(prompt)
         logging.info(f"Initial Checks response for claim: {res}")
         
-        return res
+        return res.content
     except Exception as e:
         logging.error(f"Error initial check: {e}")
         return "Function Initial Checks Failed"
@@ -97,7 +134,8 @@ def final(claim):
     logging.info("###Timely Filing Tool###")
 
     try:
-        with open("json-files/Timely Filing Requirements by State Job Aid.json") as f:
+        new_file_path = azure_file_path("Timely Filing Requirements by State Job Aid.json")
+        with open(new_file_path) as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
             logging.debug(f"Loaded data from JSON file Successfully")
         json_spec = JsonSpec(dict_=data, max_value_length=4000)
@@ -110,12 +148,17 @@ def final(claim):
             llm=model,
             toolkit=json_toolkit,
             verbose=True,
+            agent_kwargs = {
+                'handle_parsing_errors' : True
+
+            }
         )
 
         response = json_agent_executor.invoke(
             "Extract only the information related to timely filing for the specified State:\n" + claim
         )
         logging.info(f"Received Timely Filing response")
+        os.remove(new_file_path)
 
         return response
     except Exception as e:
@@ -124,8 +167,7 @@ def final(claim):
 
 
 
-def summary(navigation_steps):
-    prompt = f"""Your task is to return a consolidated Final Answer by combining all the Final Answers or Observations (If No Final Answer) in a readable format. Ensure no additional information is added.
-    {navigation_steps}"""
-    res = model.invoke(prompt)
-    return res.content
+
+
+
+
