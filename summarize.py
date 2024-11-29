@@ -14,6 +14,9 @@ from langgraph.graph import END, START, StateGraph
 import os
 from dotenv import load_dotenv
 import asyncio
+from langchain_core.globals import set_llm_cache
+from langchain_core.caches import InMemoryCache
+set_llm_cache(InMemoryCache())
 
 load_dotenv()
 

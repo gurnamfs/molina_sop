@@ -87,6 +87,7 @@ system_message = """You are an experienced supervisor. You complete any task ass
 - Always Start by using the 'create_agent' tool.
 - ONLY use 'get_file_path' tool when you get `.json` in the answer from the 'create_agent' tool.
 - Always Use 'create_agent' tool after invoking 'get_file_path' tool.
+- Always use 'final' tool at the end.
 
 ###Note:
 - Only Provide the answer, without any explanation.

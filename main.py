@@ -3,7 +3,8 @@ import re
 from contextlib import redirect_stdout
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from functions import initial_checks, final
+# from functions import initial_checks, final
+from functions import initial_checks
 from summarize import summary
 # from functions import initial_checks
 from tool_func import langgraph_agent_executor, guide_tool
@@ -36,6 +37,42 @@ app.add_middleware(
 
 
 
+# async def data_streamer(query,file_path):
+#     guide_tool.clear()
+#     logging.info(f"Received Request for SOP Navigation with query: {query} and file path: {file_path}")
+#     final_message = ""
+#     processed_claim = initial_checks(query)
+#     guide_tool.append(processed_claim)
+#     inp = f"Please process create_agent(file_path= {file_path}, query= {processed_claim})"
+    
+#     async for msg, metadata in langgraph_agent_executor.astream(
+#         {"messages": [("user", inp)]}, stream_mode="messages"
+#     ):
+#         if (
+#             msg.content
+#             and not isinstance(msg, HumanMessage)
+#             and metadata["langgraph_node"] == "tools"
+#             and not msg.name
+#         ):
+#             yield str(msg.content)  
+        
+#         if msg.content and metadata["langgraph_node"] == "agent":
+#             final_message += msg.content
+        
+#     output_stream = io.StringIO()
+#     with redirect_stdout(output_stream):
+#         res = final(processed_claim)
+#     verbose_output = output_stream.getvalue()
+#     logging.info(f"Timely filing Processed")
+#     verbose_output = verbose_output.replace("Entering new AgentExecutor chain...", "").replace("Action: json_spec_list_keys", "").replace("Action: json_spec_get_value", "").replace("ValueError", "")
+        
+#     cleaned_text = re.sub(
+#             r"\u001b\[\d+;\d+m|\u001b\[0m|\u001b\[1m>", "", verbose_output
+#         )
+    
+#     yield final_message + "\n" + cleaned_text
+
+
 async def data_streamer(query,file_path):
     guide_tool.clear()
     logging.info(f"Received Request for SOP Navigation with query: {query} and file path: {file_path}")
@@ -57,19 +94,8 @@ async def data_streamer(query,file_path):
         
         if msg.content and metadata["langgraph_node"] == "agent":
             final_message += msg.content
-        
-    output_stream = io.StringIO()
-    with redirect_stdout(output_stream):
-        res = final(processed_claim)
-    verbose_output = output_stream.getvalue()
-    logging.info(f"Timely filing Processed")
-    verbose_output = verbose_output.replace("Entering new AgentExecutor chain...", "").replace("Action: json_spec_list_keys", "").replace("Action: json_spec_get_value", "").replace("ValueError", "")
-        
-    cleaned_text = re.sub(
-            r"\u001b\[\d+;\d+m|\u001b\[0m|\u001b\[1m>", "", verbose_output
-        )
-    
-    yield final_message + "\n" + cleaned_text
+
+    yield final_message
 
 
 
@@ -121,10 +147,7 @@ async def sop_navigation(
             r"\u001b\[\d+;\d+m|\u001b\[0m|\u001b\[1m>", "", verbose_output
         )
         logging.debug("Verbose output cleaned.")
-        result = final(processed_claim)["output"]
-        logging.info(f"Timely filing Processed")
-        # return cleaned_text + f"\n\nFinal Answer: {res}"
-        return cleaned_text + f"\n\nFinal Answer: {result}"
+        return cleaned_text 
 
     except Exception as e:
         logging.error(f"Error during SOP execution: {str(e)}")
