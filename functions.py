@@ -14,29 +14,17 @@ from azure.mgmt.storage import StorageManagementClient
 from azure.storage.blob import BlobClient, BlobServiceClient
 from langchain_core.globals import set_llm_cache
 from langchain_core.caches import InMemoryCache
+from azure.storage.filedatalake import DataLakeServiceClient
 # set_llm_cache(InMemoryCache())
 
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-# AZURE_SUBSCRIPTION_ID = os.getenv("AZURE_SUBSCRIPTION_ID")
+CONN_STR = os.getenv("CONN_STR_MOLINA")
 
+service_client = DataLakeServiceClient.from_connection_string(conn_str = CONN_STR)
 
-# credential = AzureCliCredential()
-# storage_client = StorageManagementClient(credential,AZURE_SUBSCRIPTION_ID)
-
-
-STORAGE_ACCOUNT_BASE = 'molinablobstorage'
-
-container_name = 'molina-bob-container'
-
-blob_service_client = BlobServiceClient.from_connection_string(
-    conn_str = os.getenv("CONN_STR_MOLINA")
-    # account_url = "https://molinablobstorage.blob.core.windows.net/",
-    # credential = credential
-)
-
-container_client = blob_service_client.get_container_client(container=container_name)
+file_system_client = service_client.get_file_system_client("molina-bob-container")
 
 
 logging.basicConfig(
@@ -50,14 +38,9 @@ logging.basicConfig(
 
 
 def azure_file_path(file_path):
-    download_blob_client = blob_service_client.get_blob_client(
-    container = container_name,
-    blob = file_path
-    )
     with open(file_path, "wb") as data:
-        download_stream = download_blob_client.download_blob()
-        data.write(download_stream.readall())
-
+        download = file_system_client.get_file_client(file_path).download_file()
+        download.readinto(data)
     return file_path
 
 

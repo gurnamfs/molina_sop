@@ -9,6 +9,7 @@ azure-core==1.32.0
 azure-identity==1.19.0
 azure-mgmt-core==1.5.0
 azure-mgmt-storage==21.2.1
+azure-storage-file-datalake==12.18.0
 azure-storage-blob==12.24.0
 certifi==2024.8.30
 cffi==1.17.1
