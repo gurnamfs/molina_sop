@@ -82,7 +82,7 @@ async def data_streamer(query,file_path):
     inp = f"Please process create_agent(file_path= {file_path}, query= {processed_claim})"
     
     async for msg, metadata in langgraph_agent_executor.astream(
-        {"messages": [("user", inp)]}, stream_mode="messages"
+        {"messages": [("user", inp)]}, {"recursion_limit": 100}, stream_mode="messages"
     ):
         if (
             msg.content

@@ -45,12 +45,12 @@ Identify the State:
 Goal: To the identify the State mentioned in the Claim.
 
 Identify Edit Numbers:
-Goal: Detect the presence of Line Number 0 in the claim.
+Any Edit Numbers besides 253 indicate an Edit Number is present.
 
 Identify EOB Submission:
 Goal: Confirm whether an EOB is submitted.
 Conditions: 
-An EOB is "submitted" if ANY of these fields have values greater than 0:
+An EOB is "submitted" ONLY IF ANY of these fields have values greater than 0:
 Total Paid Amount
 Total Deduct
 Total Copay
@@ -61,11 +61,6 @@ Goal: Verify if the external enrollment is primary or secondary, and determine M
 Conditions:
 If external enrollment is "Secondary," Molina is the primary payer.
 If external enrollment is "Primary," Molina remains the primary with no secondary payer.
-Ensure the enrollment segment is active by confirming valid dates align with service dates.
-An enrollment segment with a termination date is considered inactive.
-Claim Form Specific Checks:
-CMS-1500 Form: Review Boxes 11a-11d for external payer information and Box 29 for other insurance.
-UB-04 Form: Check FL 54 for details on external carriers.
 
 Identify Place of Service (POS):
 Goal: Identify the Place of Service mentioned in the claim.
@@ -75,9 +70,9 @@ Provide only the answer, without any explanation.
 
 
 Sample Output:
-"<State>, External Enrollment Secondary, Line Number 0, EOB Submitted, Present Place of Service (POS) <Number>"
+"<State>, External Enrollment Secondary, Edit Number Present, EOB Submitted, Place of Service (POS) <Number>"
 
-Note: If the Line Number 0 is not present, do not mention it in the answer. For the <State> and <Number> replace it with actual data from the Claim.
+Note: If Edit Number is not present, do not mention it in the answer. For the <State> and <Number> replace it with actual data from the Claim.
 
 """
 
