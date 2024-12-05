@@ -9,11 +9,8 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 import logging
-from azure.identity import AzureCliCredential
-from azure.mgmt.storage import StorageManagementClient
-from azure.storage.blob import BlobClient, BlobServiceClient
-from langchain_core.globals import set_llm_cache
-from langchain_core.caches import InMemoryCache
+# from langchain_core.globals import set_llm_cache
+# from langchain_core.caches import InMemoryCache
 from azure.storage.filedatalake import DataLakeServiceClient
 # set_llm_cache(InMemoryCache())
 

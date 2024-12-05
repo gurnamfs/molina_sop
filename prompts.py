@@ -44,6 +44,9 @@ Steps to Evaluate Claim:
 Identify the State:
 Goal: To the identify the State mentioned in the Claim.
 
+Identify Edit Numbers:
+Goal: Detect the presence of Line Number 0 in the claim.
+
 Identify EOB Submission:
 Goal: Confirm whether an EOB is submitted.
 Conditions: 
@@ -52,9 +55,6 @@ Total Paid Amount
 Total Deduct
 Total Copay
 Total Coinsurance
-
-Identify Edit Numbers:
-Goal: Detect the presence of Line Number 0 in the claim.
 
 Determine Primary or Secondary Enrollment Status:
 Goal: Verify if the external enrollment is primary or secondary, and determine Molina’s payer position.
@@ -75,7 +75,7 @@ Provide only the answer, without any explanation.
 
 
 Sample Output:
-"<State>, External Enrollment Secondary, EOB Submitted, Line Number 0 Present Place of Service (POS) <Number>"
+"<State>, External Enrollment Secondary, Line Number 0, EOB Submitted, Present Place of Service (POS) <Number>"
 
 Note: If the Line Number 0 is not present, do not mention it in the answer. For the <State> and <Number> replace it with actual data from the Claim.
 
@@ -87,7 +87,6 @@ system_message = """You are an experienced supervisor. You complete any task ass
 - Always Start by using the 'create_agent' tool.
 - ONLY use 'get_file_path' tool when you get `.json` in the answer from the 'create_agent' tool.
 - Always Use 'create_agent' tool after invoking 'get_file_path' tool.
-- Always use 'final' tool at the end.
 
 ###Note:
 - Only Provide the answer, without any explanation.
